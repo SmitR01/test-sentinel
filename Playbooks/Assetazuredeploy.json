@@ -5,7 +5,7 @@
         "title": "Tenable VM - Enrich incident with asset info",
         "description": "Once a new Microsoft Sentinel incident is created, this playbook gets triggered and performs the following actions:\n 1. Obtains IPs from the incident. \n 2. Searches asset information by the IPs in Microsoft Sentinel.\n 3. Adds obtained information as a comment to the incident.",
         "prerequisites": [
-            "1. Prior to the deployment of this playbook, TenableIO Data Connector should be deployed."
+            "1. Prior to the deployment of this playbook, TenableVM Data Connector should be deployed."
         ],
         "lastUpdateTime": "2022-09-29T12:00:00.000Z",
         "entities": [
@@ -339,7 +339,7 @@
                                     "runAfter": {},
                                     "type": "ApiConnection",
                                     "inputs": {
-                                        "body": "Tenable_IO_Assets_CL | where ipv4s_s contains \"@{items('For_each_IP_in_incident')?['Address']}\" and TimeGenerated > ago(30d)",
+                                        "body": "Tenable_VM_Assets_CL | where ipv4s_s contains \"@{items('For_each_IP_in_incident')?['Address']}\" and TimeGenerated > ago(30d)",
                                         "host": {
                                             "connection": {
                                                 "name": "@parameters('$connections')['azuremonitorlogs']['connectionId']"

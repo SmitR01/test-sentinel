@@ -5,7 +5,7 @@
         "title": "Tenable VM - Enrich incident with vulnerability info",
         "description": "Once a new Microsoft Sentinel incident is created, this playbook gets triggered and performs the following actions:\n 1. Obtains IPs from the incident. \n 2. Searches asset IDs by the IPs in Microsoft Sentinel.\n 3. Gets vulnerabilities information in Microsoft Sentinel.\n 4. Adds obtained information as a comment to the incident.",
         "prerequisites": [
-            "1. Prior to the deployment of this playbook, TenableIO Data Connector should be deployed."
+            "1. Prior to the deployment of this playbook, TenableVM Data Connector should be deployed."
         ],
         "lastUpdateTime": "2022-09-29T12:00:00.000Z",
         "entities": [
@@ -169,67 +169,130 @@
                                                 "schema": {
                                                     "properties": {
                                                         "Computer": {
-                                                            "type": "string"
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ]
                                                         },
                                                         "MG": {
-                                                            "type": "string"
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ]
                                                         },
                                                         "ManagementGroupName": {
-                                                            "type": "string"
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ]
                                                         },
                                                         "RawData": {
-                                                            "type": "string"
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ]
                                                         },
                                                         "SourceSystem": {
-                                                            "type": "string"
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ]
                                                         },
                                                         "TenantId": {
-                                                            "type": "string"
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ]
                                                         },
                                                         "TimeGenerated": {
-                                                            "type": "string"
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ]
                                                         },
                                                         "Type": {
-                                                            "type": "string"
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ]
                                                         },
                                                         "_ResourceId": {
-                                                            "type": "string"
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ]
                                                         },
                                                         "asset_fqdn_s": {
-                                                            "type": "string"
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ]
                                                         },
                                                         "asset_hostname_s": {
-                                                            "type": "string"
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ]
                                                         },
                                                         "asset_ipv4_s": {
-                                                            "type": "string"
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ]
                                                         },
                                                         "asset_network_id_g": {
-                                                            "type": "string"
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ]
                                                         },
                                                         "asset_operating_system_s": {
-                                                            "type": "string"
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ]
                                                         },
                                                         "asset_tracked_b": {
-                                                            "type": "boolean"
+                                                            "type": [
+                                                                "boolean",
+                                                                "null"
+                                                            ]
                                                         },
                                                         "asset_uuid_g": {
-                                                            "type": "string"
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ]
                                                         },
                                                         "first_found_t": {
-                                                            "type": "string"
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ]
                                                         },
                                                         "indexed_at_s": {
-                                                            "type": "string"
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ]
                                                         },
                                                         "last_found_t": {
-                                                            "type": "string"
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ]
                                                         },
                                                         "output_s": {
-                                                            "type": "string"
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ]
                                                         },
                                                         "plugin_cve_s": {
-                                                            "type": "string"
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ]
                                                         },
                                                         "plugin_cvss_base_score_d": {
                                                             "type": [
@@ -244,40 +307,76 @@
                                                             ]
                                                         },
                                                         "plugin_cvss_temporal_vector_exploitability_s": {
-                                                            "type": "string"
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ]
                                                         },
                                                         "plugin_cvss_temporal_vector_raw_s": {
-                                                            "type": "string"
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ]
                                                         },
                                                         "plugin_cvss_temporal_vector_remediation_level_s": {
-                                                            "type": "string"
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ]
                                                         },
                                                         "plugin_cvss_temporal_vector_report_confidence_s": {
-                                                            "type": "string"
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ]
                                                         },
                                                         "plugin_cvss_vector_access_complexity_s": {
-                                                            "type": "string"
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ]
                                                         },
                                                         "plugin_cvss_vector_access_vector_s": {
-                                                            "type": "string"
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ]
                                                         },
                                                         "plugin_cvss_vector_authentication_s": {
-                                                            "type": "string"
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ]
                                                         },
                                                         "plugin_cvss_vector_availability_impact_s": {
-                                                            "type": "string"
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ]
                                                         },
                                                         "plugin_cvss_vector_confidentiality_impact_s": {
-                                                            "type": "string"
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ]
                                                         },
                                                         "plugin_cvss_vector_integrity_impact_s": {
-                                                            "type": "string"
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ]
                                                         },
                                                         "plugin_cvss_vector_raw_s": {
-                                                            "type": "string"
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ]
                                                         },
                                                         "plugin_description_s": {
-                                                            "type": "string"
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ]
                                                         },
                                                         "plugin_family_id_d": {
                                                             "type": [
@@ -286,28 +385,52 @@
                                                             ]
                                                         },
                                                         "plugin_family_s": {
-                                                            "type": "string"
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ]
                                                         },
                                                         "plugin_has_patch_b": {
-                                                            "type": "boolean"
+                                                            "type": [
+                                                                "boolean",
+                                                                "null"
+                                                            ]
                                                         },
                                                         "plugin_id_d": {
-                                                            "type": "integer"
+                                                            "type": [
+                                                                "integer",
+                                                                "null"
+                                                            ]
                                                         },
                                                         "plugin_name_s": {
-                                                            "type": "string"
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ]
                                                         },
                                                         "plugin_risk_factor_s": {
-                                                            "type": "string"
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ]
                                                         },
                                                         "plugin_see_also_s": {
-                                                            "type": "string"
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ]
                                                         },
                                                         "plugin_solution_s": {
-                                                            "type": "string"
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ]
                                                         },
                                                         "plugin_synopsis_s": {
-                                                            "type": "string"
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ]
                                                         },
                                                         "plugin_vpr_drivers_age_of_vuln_lower_bound_d": {
                                                             "type": [
@@ -316,7 +439,10 @@
                                                             ]
                                                         },
                                                         "plugin_vpr_drivers_age_of_vuln_upper_bound_d": {
-                                                            "type": "integer"
+                                                            "type": [
+                                                                "integer",
+                                                                "null"
+                                                            ]
                                                         },
                                                         "plugin_vpr_drivers_cvss3_impact_score_d": {
                                                             "type": [
@@ -331,16 +457,28 @@
                                                             ]
                                                         },
                                                         "plugin_vpr_drivers_exploit_code_maturity_s": {
-                                                            "type": "string"
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ]
                                                         },
                                                         "plugin_vpr_drivers_product_coverage_s": {
-                                                            "type": "string"
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ]
                                                         },
                                                         "plugin_vpr_drivers_threat_intensity_last28_s": {
-                                                            "type": "string"
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ]
                                                         },
                                                         "plugin_vpr_drivers_threat_sources_last28_s": {
-                                                            "type": "string"
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ]
                                                         },
                                                         "plugin_vpr_score_d": {
                                                             "type": [
@@ -355,37 +493,70 @@
                                                             ]
                                                         },
                                                         "port_port_d": {
-                                                            "type": "integer"
+                                                            "type": [
+                                                                "integer",
+                                                                "null"
+                                                            ]
                                                         },
                                                         "port_protocol_s": {
-                                                            "type": "string"
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ]
                                                         },
                                                         "scan_completed_at_t": {
-                                                            "type": "string"
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ]
                                                         },
                                                         "scan_schedule_uuid_s": {
-                                                            "type": "string"
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ]
                                                         },
                                                         "scan_started_at_t": {
-                                                            "type": "string"
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ]
                                                         },
                                                         "scan_uuid_s": {
-                                                            "type": "string"
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ]
                                                         },
                                                         "severity_default_id_d": {
-                                                            "type": "integer"
+                                                            "type": [
+                                                                "integer",
+                                                                "null"
+                                                            ]
                                                         },
                                                         "severity_id_d": {
-                                                            "type": "integer"
+                                                            "type": [
+                                                                "integer",
+                                                                "null"
+                                                            ]
                                                         },
                                                         "severity_modification_type_s": {
-                                                            "type": "string"
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ]
                                                         },
                                                         "severity_s": {
-                                                            "type": "string"
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ]
                                                         },
                                                         "state_s": {
-                                                            "type": "string"
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ]
                                                         }
                                                     },
                                                     "type": "object"
@@ -405,7 +576,7 @@
                                 },
                                 "Run_query_and_list_results": {
                                     "inputs": {
-                                        "body": "Tenable_IO_Vuln_CL | where asset_ipv4_s contains \"@{items('For_each_IP_in_incident')?['Address']}\" and TimeGenerated > ago(30d)",
+                                        "body": "Tenable_VM_Vuln_CL | where asset_ipv4_s contains \"@{items('For_each_IP_in_incident')?['Address']}\" and TimeGenerated > ago(30d)",
                                         "host": {
                                             "connection": {
                                                 "name": "@parameters('$connections')['azuremonitorlogs']['connectionId']"

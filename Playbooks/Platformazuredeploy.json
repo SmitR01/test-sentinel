@@ -60,7 +60,7 @@
                                 "parameters": [],
                                 "responses": {
                                     "200": {
-                                        "description": "Returned if Tenable.io successfully retrieved the list of permissions for your container.",
+                                        "description": "Returned if TenableVM successfully retrieved the list of permissions for your container.",
                                         "schema": {
                                             "properties": {
                                                 "permissions": {
@@ -199,7 +199,7 @@
                                 ],
                                 "responses": {
                                     "200": {
-                                        "description": "Returned if Tenable.io successfully retrieved the list of user group permissions for the specified user group.",
+                                        "description": "Returned if TenableVM successfully retrieved the list of user group permissions for the specified user group.",
                                         "schema": {
                                             "properties": {
                                                 "permissions_available": {
@@ -435,7 +435,7 @@
                                 ],
                                 "responses": {
                                     "200": {
-                                        "description": "Returned if Tenable.io successfully retrieved the list of user permissions for the specified user.",
+                                        "description": "Returned if TenableVM successfully retrieved the list of user permissions for the specified user.",
                                         "schema": {
                                             "properties": {
                                                 "permissions_available": {
@@ -671,7 +671,7 @@
                                 ],
                                 "responses": {
                                     "200": {
-                                        "description": "Returned if Tenable.io successfully retrieved the specified permission details.",
+                                        "description": "Returned if TenableVM successfully retrieved the specified permission details.",
                                         "schema": {
                                             "properties": {
                                                 "actions": {
@@ -774,7 +774,7 @@
                                         "description": "Returned if you are not allowed to view the permission details."
                                     },
                                     "404": {
-                                        "description": "Returned if Tenable.io could not find the specified permission."
+                                        "description": "Returned if TenableVM could not find the specified permission."
                                     }
                                 },
                                 "security": [
@@ -916,7 +916,7 @@
                                                 },
                                                 "expiration": {
                                                     "default": 30,
-                                                    "description": "The number of days in which the export job expires. If this parameter is omitted, Tenable.io uses the default value of `30`.",
+                                                    "description": "The number of days in which the export job expires. If this parameter is omitted, TenableVM uses the default value of `30`.",
                                                     "type": "integer"
                                                 },
                                                 "format": {
@@ -930,7 +930,7 @@
                                                 },
                                                 "name": {
                                                     "default": "<source type> - YYYY-MM-DDTHH:MM:SSZ",
-                                                    "description": "A name for the export job. If no name is provided, Tenable.io uses the data source and request date to create a unique name.",
+                                                    "description": "A name for the export job. If no name is provided, TenableVM uses the data source and request date to create a unique name.",
                                                     "maximum": 128,
                                                     "type": "string"
                                                 },
@@ -973,7 +973,7 @@
                                 ],
                                 "responses": {
                                     "200": {
-                                        "description": "Returned if Tenable.io successfully queues the export request.",
+                                        "description": "Returned if TenableVM successfully queues the export request.",
                                         "schema": {
                                             "properties": {
                                                 "id": {
@@ -1067,7 +1067,7 @@
                                                                 "type": "string"
                                                             },
                                                             "job_name": {
-                                                                "description": "The name of the export job. If no name was provided, Tenable.io used the data source and request date to create a unique name.",
+                                                                "description": "The name of the export job. If no name was provided, TenableVM used the data source and request date to create a unique name.",
                                                                 "format": "UUID",
                                                                 "type": "string"
                                                             },
@@ -1210,7 +1210,7 @@
                                                             "type": "string"
                                                         },
                                                         "job_name": {
-                                                            "description": "The name of the export job. If no name was provided, Tenable.io used the data source and request date to create a unique name.",
+                                                            "description": "The name of the export job. If no name was provided, TenableVM used the data source and request date to create a unique name.",
                                                             "format": "UUID",
                                                             "type": "string"
                                                         },
@@ -1292,7 +1292,7 @@
                                 ],
                                 "responses": {
                                     "200": {
-                                        "description": "Returned if Tenable.io successfully deletes the specified export job."
+                                        "description": "Returned if TenableVM successfully deletes the specified export job."
                                     },
                                     "400": {
                                         "description": "Returned if your request specifies invalid input parameters or if an error occurred while processing the request."
@@ -1348,7 +1348,7 @@
                                         "description": "Returned if you do not have permissions to download the specified export job."
                                     },
                                     "404": {
-                                        "description": "Returned if Tenable.io cannot find the specified export job."
+                                        "description": "Returned if TenableVM cannot find the specified export job."
                                     },
                                     "429": {
                                         "description": "Returned if you attempt to send too many requests in a specific period of time. For more information, see [Rate Limiting](doc:rate-limiting)."
@@ -1550,11 +1550,11 @@
                                             "items": {
                                                 "properties": {
                                                     "container_uuid": {
-                                                        "description": "The UUID of the Tenable.io instance to which the user belongs.",
+                                                        "description": "The UUID of the TenableVM instance to which the user belongs.",
                                                         "type": "string"
                                                     },
                                                     "email": {
-                                                        "description": "The email address of the user. If this attribute is empty, Tenable.io uses the `username` value as the user's email address.",
+                                                        "description": "The email address of the user. If this attribute is empty, TenableVM uses the `username` value as the user's email address.",
                                                         "type": "string"
                                                     },
                                                     "enabled": {
@@ -1566,19 +1566,19 @@
                                                         "type": "integer"
                                                     },
                                                     "last_login_attempt": {
-                                                        "description": "The time (in Unix milliseconds) of the last time the user failed to log in to the Tenable.io user interface. This attribute is only present if the user has attempted unsuccessfully to log in to the Tenable.io user interface.",
+                                                        "description": "The time (in Unix milliseconds) of the last time the user failed to log in to the TenableVM user interface. This attribute is only present if the user has attempted unsuccessfully to log in to the TenableVM user interface.",
                                                         "type": "integer"
                                                     },
                                                     "lastlogin": {
-                                                        "description": "The last time (in Unix milliseconds) that the user successfully logged in to the Tenable.io user interface. This attribute is only present if the user has logged in at least once successfully to the Tenable.io user interface.",
+                                                        "description": "The last time (in Unix milliseconds) that the user successfully logged in to the TenableVM user interface. This attribute is only present if the user has logged in at least once successfully to the TenableVM user interface.",
                                                         "type": "integer"
                                                     },
                                                     "lockout": {
-                                                        "description": "Specifies whether the user can log into the Tenable.io user interface (`0`) or is locked out (`1`).\n\nTenable.io automatically updates this attribute to `1` if the `login_fail_count` attribute for the user is greater than 5. To unlock a user account, reset the user's password using the [PUT /users/{user_id}/chpasswd](ref:users-password) endpoint.\n\n**Note:** A user can be locked out of the user interface but still submit API requests if they are assigned the appropriate authorizations (`api_permitted`). To prevent a user from submitting API requests, limit authorizations using the [PUT /users/{user_id}/authorizations](ref:users-update-auths) endpoint, or disable the user entirely using the [PUT /users/{user_id}/enabled](ref:users-enabled) endpoint.",
+                                                        "description": "Specifies whether the user can log into the TenableVM user interface (`0`) or is locked out (`1`).\n\nTenableVM automatically updates this attribute to `1` if the `login_fail_count` attribute for the user is greater than 5. To unlock a user account, reset the user's password using the [PUT /users/{user_id}/chpasswd](ref:users-password) endpoint.\n\n**Note:** A user can be locked out of the user interface but still submit API requests if they are assigned the appropriate authorizations (`api_permitted`). To prevent a user from submitting API requests, limit authorizations using the [PUT /users/{user_id}/authorizations](ref:users-update-auths) endpoint, or disable the user entirely using the [PUT /users/{user_id}/enabled](ref:users-enabled) endpoint.",
                                                         "type": "integer"
                                                     },
                                                     "login_fail_count": {
-                                                        "description": "The number of failed login attempts since the user last successfully logged in to the Tenable.io user interface. \n\nIf this attribute is greater than 5, Tenable.io locks the user account (that is, updates the `lockout` attribute for the user to `1`.)\n\nYou can reset this count to `0` by [changing the user's password](ref:users-password) or [generating the user's API keys](ref:users-keys).",
+                                                        "description": "The number of failed login attempts since the user last successfully logged in to the TenableVM user interface. \n\nIf this attribute is greater than 5, TenableVM locks the user account (that is, updates the `lockout` attribute for the user to `1`.)\n\nYou can reset this count to `0` by [changing the user's password](ref:users-password) or [generating the user's API keys](ref:users-keys).",
                                                         "type": "integer"
                                                     },
                                                     "login_fail_total": {
@@ -1597,7 +1597,7 @@
                                                     "two_factor": {
                                                         "properties": {
                                                             "email_enabled": {
-                                                                "description": "Indicates whether backup notification for two-factor authentication is enabled (`1`) or disabled (`0`). If enabled, Tenable.io sends the two-factor verification code via e-mail, as well as via the default SMS message.",
+                                                                "description": "Indicates whether backup notification for two-factor authentication is enabled (`1`) or disabled (`0`). If enabled, TenableVM sends the two-factor verification code via e-mail, as well as via the default SMS message.",
                                                                 "type": "integer"
                                                             },
                                                             "sms_enabled": {
@@ -1645,7 +1645,7 @@
                                         "description": "Returned if you do not have permission to list a group's users."
                                     },
                                     "404": {
-                                        "description": "Returned if Tenable.io cannot find the specified group."
+                                        "description": "Returned if TenableVM cannot find the specified group."
                                     },
                                     "429": {
                                         "description": "Returned if you attempt to send too many requests in a specific period of time. For more information, see [Rate Limiting](doc:rate-limiting)."
@@ -1690,20 +1690,20 @@
                                 ],
                                 "responses": {
                                     "200": {
-                                        "description": "Returned if Tenable.io removes the user from the group.",
+                                        "description": "Returned if TenableVM removes the user from the group.",
                                         "schema": {}
                                     },
                                     "403": {
                                         "description": "Returned if you do not have permission to delete users from the group."
                                     },
                                     "404": {
-                                        "description": "Returned if Tenable.io cannot find the specified group or user."
+                                        "description": "Returned if TenableVM cannot find the specified group or user."
                                     },
                                     "429": {
                                         "description": "Returned if you attempt to send too many requests in a specific period of time. For more information, see [Rate Limiting](doc:rate-limiting)."
                                     },
                                     "500": {
-                                        "description": "Returned if Tenable.io fails to remove the user from the group."
+                                        "description": "Returned if TenableVM fails to remove the user from the group."
                                     }
                                 },
                                 "security": [
@@ -1741,11 +1741,11 @@
                                         "schema": {
                                             "properties": {
                                                 "container_uuid": {
-                                                    "description": "The UUID of the Tenable.io instance to which the user belongs.",
+                                                    "description": "The UUID of the TenableVM instance to which the user belongs.",
                                                     "type": "string"
                                                 },
                                                 "email": {
-                                                    "description": "The email address of the user. If this attribute is empty, Tenable.io uses the `username` value as the user's email address.",
+                                                    "description": "The email address of the user. If this attribute is empty, TenableVM uses the `username` value as the user's email address.",
                                                     "type": "string"
                                                 },
                                                 "enabled": {
@@ -1757,19 +1757,19 @@
                                                     "type": "integer"
                                                 },
                                                 "last_login_attempt": {
-                                                    "description": "The time (in Unix milliseconds) of the last time the user failed to log in to the Tenable.io user interface. This attribute is only present if the user has attempted unsuccessfully to log in to the Tenable.io user interface.",
+                                                    "description": "The time (in Unix milliseconds) of the last time the user failed to log in to the TenableVM user interface. This attribute is only present if the user has attempted unsuccessfully to log in to the TenableVM user interface.",
                                                     "type": "integer"
                                                 },
                                                 "lastlogin": {
-                                                    "description": "The last time (in Unix milliseconds) that the user successfully logged in to the Tenable.io user interface. This attribute is only present if the user has logged in at least once successfully to the Tenable.io user interface.",
+                                                    "description": "The last time (in Unix milliseconds) that the user successfully logged in to the TenableVM user interface. This attribute is only present if the user has logged in at least once successfully to the TenableVM user interface.",
                                                     "type": "integer"
                                                 },
                                                 "lockout": {
-                                                    "description": "Specifies whether the user can log into the Tenable.io user interface (`0`) or is locked out (`1`).\n\nTenable.io automatically updates this attribute to `1` if the `login_fail_count` attribute for the user is greater than 5. To unlock a user account, reset the user's password using the [PUT /users/{user_id}/chpasswd](ref:users-password) endpoint.\n\n**Note:** A user can be locked out of the user interface but still submit API requests if they are assigned the appropriate authorizations (`api_permitted`). To prevent a user from submitting API requests, limit authorizations using the [PUT /users/{user_id}/authorizations](ref:users-update-auths) endpoint, or disable the user entirely using the [PUT /users/{user_id}/enabled](ref:users-enabled) endpoint.",
+                                                    "description": "Specifies whether the user can log into the TenableVM user interface (`0`) or is locked out (`1`).\n\nTenableVM automatically updates this attribute to `1` if the `login_fail_count` attribute for the user is greater than 5. To unlock a user account, reset the user's password using the [PUT /users/{user_id}/chpasswd](ref:users-password) endpoint.\n\n**Note:** A user can be locked out of the user interface but still submit API requests if they are assigned the appropriate authorizations (`api_permitted`). To prevent a user from submitting API requests, limit authorizations using the [PUT /users/{user_id}/authorizations](ref:users-update-auths) endpoint, or disable the user entirely using the [PUT /users/{user_id}/enabled](ref:users-enabled) endpoint.",
                                                     "type": "integer"
                                                 },
                                                 "login_fail_count": {
-                                                    "description": "The number of failed login attempts since the user last successfully logged in to the Tenable.io user interface. \n\nIf this attribute is greater than 5, Tenable.io locks the user account (that is, updates the `lockout` attribute for the user to `1`.)\n\nYou can reset this count to `0` by [changing the user's password](ref:users-password) or [generating the user's API keys](ref:users-keys).",
+                                                    "description": "The number of failed login attempts since the user last successfully logged in to the TenableVM user interface. \n\nIf this attribute is greater than 5, TenableVM locks the user account (that is, updates the `lockout` attribute for the user to `1`.)\n\nYou can reset this count to `0` by [changing the user's password](ref:users-password) or [generating the user's API keys](ref:users-keys).",
                                                     "type": "integer"
                                                 },
                                                 "login_fail_total": {
@@ -1788,7 +1788,7 @@
                                                 "two_factor": {
                                                     "properties": {
                                                         "email_enabled": {
-                                                            "description": "Indicates whether backup notification for two-factor authentication is enabled (`1`) or disabled (`0`). If enabled, Tenable.io sends the two-factor verification code via e-mail, as well as via the default SMS message.",
+                                                            "description": "Indicates whether backup notification for two-factor authentication is enabled (`1`) or disabled (`0`). If enabled, TenableVM sends the two-factor verification code via e-mail, as well as via the default SMS message.",
                                                             "type": "integer"
                                                         },
                                                         "sms_enabled": {
@@ -1834,7 +1834,7 @@
                                         "description": "Returned if you do not have permission to view the given user details."
                                     },
                                     "404": {
-                                        "description": "Returned if Tenable.io cannot find the specified user."
+                                        "description": "Returned if TenableVM cannot find the specified user."
                                     },
                                     "429": {
                                         "description": "Returned if you attempt to send too many requests in a specific period of time. For more information, see [Rate Limiting](doc:rate-limiting)."
@@ -1869,14 +1869,14 @@
                                 ],
                                 "responses": {
                                     "200": {
-                                        "description": "Returned if Tenable.io deletes the user.",
+                                        "description": "Returned if TenableVM deletes the user.",
                                         "schema": {}
                                     },
                                     "403": {
                                         "description": "Returned if you do not have permission to delete the specified user."
                                     },
                                     "404": {
-                                        "description": "Returned if Tenable.io cannot find the specified user."
+                                        "description": "Returned if TenableVM cannot find the specified user."
                                     },
                                     "409": {
                                         "description": "Returned if you try to delete your own account."
@@ -1885,7 +1885,7 @@
                                         "description": "Returned if you attempt to send too many requests in a specific period of time. For more information, see [Rate Limiting](doc:rate-limiting)."
                                     },
                                     "500": {
-                                        "description": "Returned if Tenable.io fails to delete the user."
+                                        "description": "Returned if TenableVM fails to delete the user."
                                     }
                                 },
                                 "security": [
@@ -1924,7 +1924,7 @@
                                         "schema": {
                                             "properties": {
                                                 "email": {
-                                                    "description": "The email address of the user. A valid email address must be in the format, `name@domain`, where `domain` corresponds to a domain approved for your Tenable.io instance.\n\nThis email address overrides the email address set in `username`. If your request omits this parameter, Tenable.io uses the `username` value as the user's email address.\n\n**Note:** During initial setup, Tenable configures approved domains for your Tenable.io instance. To add domains to your instance, contact Tenable Support.",
+                                                    "description": "The email address of the user. A valid email address must be in the format, `name@domain`, where `domain` corresponds to a domain approved for your TenableVM instance.\n\nThis email address overrides the email address set in `username`. If your request omits this parameter, TenableVM uses the `username` value as the user's email address.\n\n**Note:** During initial setup, Tenable configures approved domains for your TenableVM instance. To add domains to your instance, contact Tenable Support.",
                                                     "type": "string"
                                                 },
                                                 "enabled": {
@@ -1950,15 +1950,15 @@
                                 ],
                                 "responses": {
                                     "200": {
-                                        "description": "Returned if Tenable.io successfully updates the user.",
+                                        "description": "Returned if TenableVM successfully updates the user.",
                                         "schema": {
                                             "properties": {
                                                 "container_uuid": {
-                                                    "description": "The UUID of the Tenable.io instance to which the user belongs.",
+                                                    "description": "The UUID of the TenableVM instance to which the user belongs.",
                                                     "type": "string"
                                                 },
                                                 "email": {
-                                                    "description": "The email address of the user. If this attribute is empty, Tenable.io uses the `username` value as the user's email address.",
+                                                    "description": "The email address of the user. If this attribute is empty, TenableVM uses the `username` value as the user's email address.",
                                                     "type": "string"
                                                 },
                                                 "enabled": {
@@ -1970,19 +1970,19 @@
                                                     "type": "integer"
                                                 },
                                                 "last_login_attempt": {
-                                                    "description": "The time (in Unix milliseconds) of the last time the user failed to log in to the Tenable.io user interface. This attribute is only present if the user has attempted unsuccessfully to log in to the Tenable.io user interface.",
+                                                    "description": "The time (in Unix milliseconds) of the last time the user failed to log in to the TenableVM user interface. This attribute is only present if the user has attempted unsuccessfully to log in to the TenableVM user interface.",
                                                     "type": "integer"
                                                 },
                                                 "lastlogin": {
-                                                    "description": "The last time (in Unix milliseconds) that the user successfully logged in to the Tenable.io user interface. This attribute is only present if the user has logged in at least once successfully to the Tenable.io user interface.",
+                                                    "description": "The last time (in Unix milliseconds) that the user successfully logged in to the TenableVM user interface. This attribute is only present if the user has logged in at least once successfully to the TenableVM user interface.",
                                                     "type": "integer"
                                                 },
                                                 "lockout": {
-                                                    "description": "Specifies whether the user can log into the Tenable.io user interface (`0`) or is locked out (`1`).\n\nTenable.io automatically updates this attribute to `1` if the `login_fail_count` attribute for the user is greater than 5. To unlock a user account, reset the user's password using the [PUT /users/{user_id}/chpasswd](ref:users-password) endpoint.\n\n**Note:** A user can be locked out of the user interface but still submit API requests if they are assigned the appropriate authorizations (`api_permitted`). To prevent a user from submitting API requests, limit authorizations using the [PUT /users/{user_id}/authorizations](ref:users-update-auths) endpoint, or disable the user entirely using the [PUT /users/{user_id}/enabled](ref:users-enabled) endpoint.",
+                                                    "description": "Specifies whether the user can log into the TenableVM user interface (`0`) or is locked out (`1`).\n\nTenableVM automatically updates this attribute to `1` if the `login_fail_count` attribute for the user is greater than 5. To unlock a user account, reset the user's password using the [PUT /users/{user_id}/chpasswd](ref:users-password) endpoint.\n\n**Note:** A user can be locked out of the user interface but still submit API requests if they are assigned the appropriate authorizations (`api_permitted`). To prevent a user from submitting API requests, limit authorizations using the [PUT /users/{user_id}/authorizations](ref:users-update-auths) endpoint, or disable the user entirely using the [PUT /users/{user_id}/enabled](ref:users-enabled) endpoint.",
                                                     "type": "integer"
                                                 },
                                                 "login_fail_count": {
-                                                    "description": "The number of failed login attempts since the user last successfully logged in to the Tenable.io user interface. \n\nIf this attribute is greater than 5, Tenable.io locks the user account (that is, updates the `lockout` attribute for the user to `1`.)\n\nYou can reset this count to `0` by [changing the user's password](ref:users-password) or [generating the user's API keys](ref:users-keys).",
+                                                    "description": "The number of failed login attempts since the user last successfully logged in to the TenableVM user interface. \n\nIf this attribute is greater than 5, TenableVM locks the user account (that is, updates the `lockout` attribute for the user to `1`.)\n\nYou can reset this count to `0` by [changing the user's password](ref:users-password) or [generating the user's API keys](ref:users-keys).",
                                                     "type": "integer"
                                                 },
                                                 "login_fail_total": {
@@ -2001,7 +2001,7 @@
                                                 "two_factor": {
                                                     "properties": {
                                                         "email_enabled": {
-                                                            "description": "Indicates whether backup notification for two-factor authentication is enabled (`1`) or disabled (`0`). If enabled, Tenable.io sends the two-factor verification code via e-mail, as well as via the default SMS message.",
+                                                            "description": "Indicates whether backup notification for two-factor authentication is enabled (`1`) or disabled (`0`). If enabled, TenableVM sends the two-factor verification code via e-mail, as well as via the default SMS message.",
                                                             "type": "integer"
                                                         },
                                                         "sms_enabled": {
@@ -2050,7 +2050,7 @@
                                         "description": "Returned if you do not have permission to update a user."
                                     },
                                     "404": {
-                                        "description": "Returned if Tenable.io cannot find the specified user."
+                                        "description": "Returned if TenableVM cannot find the specified user."
                                     },
                                     "409": {
                                         "description": "Returned if you attempt to change your own account's enabled or disabled status."
@@ -2114,11 +2114,11 @@
                                         "schema": {
                                             "properties": {
                                                 "container_uuid": {
-                                                    "description": "The UUID of the Tenable.io instance to which the user belongs.",
+                                                    "description": "The UUID of the TenableVM instance to which the user belongs.",
                                                     "type": "string"
                                                 },
                                                 "email": {
-                                                    "description": "The email address of the user. If this attribute is empty, Tenable.io uses the `username` value as the user's email address.",
+                                                    "description": "The email address of the user. If this attribute is empty, TenableVM uses the `username` value as the user's email address.",
                                                     "type": "string"
                                                 },
                                                 "enabled": {
@@ -2130,19 +2130,19 @@
                                                     "type": "integer"
                                                 },
                                                 "last_login_attempt": {
-                                                    "description": "The time (in Unix milliseconds) of the last time the user failed to log in to the Tenable.io user interface. This attribute is only present if the user has attempted unsuccessfully to log in to the Tenable.io user interface.",
+                                                    "description": "The time (in Unix milliseconds) of the last time the user failed to log in to the TenableVM user interface. This attribute is only present if the user has attempted unsuccessfully to log in to the TenableVM user interface.",
                                                     "type": "integer"
                                                 },
                                                 "lastlogin": {
-                                                    "description": "The last time (in Unix milliseconds) that the user successfully logged in to the Tenable.io user interface. This attribute is only present if the user has logged in at least once successfully to the Tenable.io user interface.",
+                                                    "description": "The last time (in Unix milliseconds) that the user successfully logged in to the TenableVM user interface. This attribute is only present if the user has logged in at least once successfully to the TenableVM user interface.",
                                                     "type": "integer"
                                                 },
                                                 "lockout": {
-                                                    "description": "Specifies whether the user can log into the Tenable.io user interface (`0`) or is locked out (`1`).\n\nTenable.io automatically updates this attribute to `1` if the `login_fail_count` attribute for the user is greater than 5. To unlock a user account, reset the user's password using the [PUT /users/{user_id}/chpasswd](ref:users-password) endpoint.\n\n**Note:** A user can be locked out of the user interface but still submit API requests if they are assigned the appropriate authorizations (`api_permitted`). To prevent a user from submitting API requests, limit authorizations using the [PUT /users/{user_id}/authorizations](ref:users-update-auths) endpoint, or disable the user entirely using the [PUT /users/{user_id}/enabled](ref:users-enabled) endpoint.",
+                                                    "description": "Specifies whether the user can log into the TenableVM user interface (`0`) or is locked out (`1`).\n\nTenableVM automatically updates this attribute to `1` if the `login_fail_count` attribute for the user is greater than 5. To unlock a user account, reset the user's password using the [PUT /users/{user_id}/chpasswd](ref:users-password) endpoint.\n\n**Note:** A user can be locked out of the user interface but still submit API requests if they are assigned the appropriate authorizations (`api_permitted`). To prevent a user from submitting API requests, limit authorizations using the [PUT /users/{user_id}/authorizations](ref:users-update-auths) endpoint, or disable the user entirely using the [PUT /users/{user_id}/enabled](ref:users-enabled) endpoint.",
                                                     "type": "integer"
                                                 },
                                                 "login_fail_count": {
-                                                    "description": "The number of failed login attempts since the user last successfully logged in to the Tenable.io user interface. \n\nIf this attribute is greater than 5, Tenable.io locks the user account (that is, updates the `lockout` attribute for the user to `1`.)\n\nYou can reset this count to `0` by [changing the user's password](ref:users-password) or [generating the user's API keys](ref:users-keys).",
+                                                    "description": "The number of failed login attempts since the user last successfully logged in to the TenableVM user interface. \n\nIf this attribute is greater than 5, TenableVM locks the user account (that is, updates the `lockout` attribute for the user to `1`.)\n\nYou can reset this count to `0` by [changing the user's password](ref:users-password) or [generating the user's API keys](ref:users-keys).",
                                                     "type": "integer"
                                                 },
                                                 "login_fail_total": {
@@ -2161,7 +2161,7 @@
                                                 "two_factor": {
                                                     "properties": {
                                                         "email_enabled": {
-                                                            "description": "Indicates whether backup notification for two-factor authentication is enabled (`1`) or disabled (`0`). If enabled, Tenable.io sends the two-factor verification code via e-mail, as well as via the default SMS message.",
+                                                            "description": "Indicates whether backup notification for two-factor authentication is enabled (`1`) or disabled (`0`). If enabled, TenableVM sends the two-factor verification code via e-mail, as well as via the default SMS message.",
                                                             "type": "integer"
                                                         },
                                                         "sms_enabled": {
@@ -2207,7 +2207,7 @@
                                         "description": "Returned if you do not have permission to update a user."
                                     },
                                     "404": {
-                                        "description": "Returned if Tenable.io cannot find the specified user."
+                                        "description": "Returned if TenableVM cannot find the specified user."
                                     },
                                     "409": {
                                         "description": "Returned if you try to change your own permissions."
@@ -2252,27 +2252,27 @@
                             "name": "Access Control"
                         },
                         {
-                            "description": "Tenable.io includes the ability to track assets that belong to your organization. Assets are entities of value on a network that can be exploited. This includes laptops, desktops, servers, routers, mobile phones, virtual machines, software containers, and cloud instances. By providing comprehensive information about the assets that belong to your organization, Tenable.io helps to eliminate potential security risks, identify under-utilized resources, and support compliance efforts. For more information, see [Assets](https://docs.tenable.com/tenableio/Content/Analysis/ExploreAssets.htm) in the Tenable.io User Guide.",
+                            "description": "TenableVM includes the ability to track assets that belong to your organization. Assets are entities of value on a network that can be exploited. This includes laptops, desktops, servers, routers, mobile phones, virtual machines, software containers, and cloud instances. By providing comprehensive information about the assets that belong to your organization, TenableVM helps to eliminate potential security risks, identify under-utilized resources, and support compliance efforts. For more information, see [Assets](https://docs.tenable.com/tenableio/Content/Analysis/ExploreAssets.htm) in the TenableVM User Guide.",
                             "name": "Assets"
                         },
                         {
-                            "description": "With third-party data connectors, you can import assets from other platforms into Tenable.io. Tenable.io supports programmatic interaction with the following connectors:\n\n- Amazon Web Services (AWS)\n- Microsoft Azure\n- Google Cloud Platform (GCP)\n\nUse the API to perform a standard set of CRUD operation on connector objects, and then use the connectors to import asset data by scheduling or running on-demand import jobs. For background information about connectors, see [Tenable.io Vulnerability Management User Guide](https://docs.tenable.com/tenableio/vulnerabilitymanagement/Content/Settings/Connectors.htm).",
+                            "description": "With third-party data connectors, you can import assets from other platforms into TenableVM. TenableVM supports programmatic interaction with the following connectors:\n\n- Amazon Web Services (AWS)\n- Microsoft Azure\n- Google Cloud Platform (GCP)\n\nUse the API to perform a standard set of CRUD operation on connector objects, and then use the connectors to import asset data by scheduling or running on-demand import jobs. For background information about connectors, see [TenableVM Vulnerability Management User Guide](https://docs.tenable.com/tenableio/vulnerabilitymanagement/Content/Settings/Connectors.htm).",
                             "name": "Connectors"
                         },
                         {
-                            "description": "The exports API allows you to asynchronously export assets and findings data from Tenable.io in JSON or CSV format. Use the API to initiate export jobs, monitor job status, and download the export results.",
+                            "description": "The exports API allows you to asynchronously export assets and findings data from TenableVM in JSON or CSV format. Use the API to initiate export jobs, monitor job status, and download the export results.",
                             "name": "Exports"
                         },
                         {
-                            "description": "Findings provide insight into your organization's vulnerability findings and the assets on which the finding was identified. A finding is a single instance of a vulnerability appearing on an asset, identified uniquely by plugin ID, port, and protocol. For more information, see [Findings](https://docs.tenable.com/tenableio/Content/Analysis/Findings.htm) in the Tenable.io User Guide.",
+                            "description": "Findings provide insight into your organization's vulnerability findings and the assets on which the finding was identified. A finding is a single instance of a vulnerability appearing on an asset, identified uniquely by plugin ID, port, and protocol. For more information, see [Findings](https://docs.tenable.com/tenableio/Content/Analysis/Findings.htm) in the TenableVM User Guide.",
                             "name": "Findings"
                         },
                         {
-                            "description": "With user groups, you can categorize users and manage user permissions to Tenable.io resources. When you assign users to a group, the users inherit the permissions assigned to the group. Use the API to perform standard CRUD operations on group objects, and also to manage users in groups.\n\nFor background information about groups, see [Tenable.io Vulnerability Management User Guide](https://docs.tenable.com/tenableio/vulnerabilitymanagement/Content/Settings/Groups.htm).",
+                            "description": "With user groups, you can categorize users and manage user permissions to TenableVM resources. When you assign users to a group, the users inherit the permissions assigned to the group. Use the API to perform standard CRUD operations on group objects, and also to manage users in groups.\n\nFor background information about groups, see [TenableVM Vulnerability Management User Guide](https://docs.tenable.com/tenableio/vulnerabilitymanagement/Content/Settings/Groups.htm).",
                             "name": "Groups"
                         },
                         {
-                            "description": "User accounts enable you to provide access to Tenable.io and manage permissions for Tenable.io resources. You can use the API to perform standard CRUD operations on user objects, and also change passwords, generate API keys, impersonate users, enable multi-factor authentication, and manage access authorizations.\n\nFor background information about managing users, see [Tenable.io Vulnerability Management User Guide](https://docs.tenable.com/tenableio/vulnerabilitymanagement/Content/Settings/Users.htm).",
+                            "description": "User accounts enable you to provide access to TenableVM and manage permissions for TenableVM resources. You can use the API to perform standard CRUD operations on user objects, and also change passwords, generate API keys, impersonate users, enable multi-factor authentication, and manage access authorizations.\n\nFor background information about managing users, see [TenableVM Vulnerability Management User Guide](https://docs.tenable.com/tenableio/vulnerabilitymanagement/Content/Settings/Users.htm).",
                             "name": "Users"
                         }
                     ],

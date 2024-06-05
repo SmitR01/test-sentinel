@@ -71,7 +71,7 @@
                                                     "items": {
                                                         "properties": {
                                                             "acr_drivers": {
-                                                                "description": "The key drivers that Tenable uses to calculate an asset's Tenable-provided ACR. For more information, see [Lumin Metrics](https://docs.tenable.com/tenableio/vulnerabilitymanagement/Content/Analysis/LuminMetrics.htm) in the *Tenable.io Vulnerability Management User Guide*.\n\nThis attribute is only present if you have a Lumin license.",
+                                                                "description": "The key drivers that Tenable uses to calculate an asset's Tenable-provided ACR. For more information, see [Lumin Metrics](https://docs.tenable.com/tenableio/vulnerabilitymanagement/Content/Analysis/LuminMetrics.htm) in the *TenableVM Vulnerability Management User Guide*.\n\nThis attribute is only present if you have a Lumin license.",
                                                                 "items": {
                                                                     "description": "Information about an asset characteristic that factored into the ACR score calculation.",
                                                                     "properties": {
@@ -92,7 +92,7 @@
                                                                 "type": "array"
                                                             },
                                                             "acr_score": {
-                                                                "description": "The Asset Criticality Rating (ACR) for the asset. With Lumin, Tenable assigns an ACR to each asset on your network to represent the asset's relative risk as an integer from 1 to 10. For more information, see [Lumin Metrics](https://docs.tenable.com/tenableio/vulnerabilitymanagement/Content/Analysis/LuminMetrics.htm) in the *Tenable.io Vulnerability Management User Guide*.\n\nThis attribute is only present if you have a Lumin license.",
+                                                                "description": "The Asset Criticality Rating (ACR) for the asset. With Lumin, Tenable assigns an ACR to each asset on your network to represent the asset's relative risk as an integer from 1 to 10. For more information, see [Lumin Metrics](https://docs.tenable.com/tenableio/vulnerabilitymanagement/Content/Analysis/LuminMetrics.htm) in the *TenableVM Vulnerability Management User Guide*.\n\nThis attribute is only present if you have a Lumin license.",
                                                                 "type": "integer"
                                                             },
                                                             "agent_name": {
@@ -110,7 +110,7 @@
                                                                 "type": "array"
                                                             },
                                                             "exposure_score": {
-                                                                "description": "The Asset Exposure Score (AES) for the asset. For more information, see [Lumin Metrics](https://docs.tenable.com/tenableio/vulnerabilitymanagement/Content/Analysis/LuminMetrics.htm) in the *Tenable.io Vulnerability Management User Guide*.\n\nThis attribute is only present if you have a Lumin license.",
+                                                                "description": "The Asset Exposure Score (AES) for the asset. For more information, see [Lumin Metrics](https://docs.tenable.com/tenableio/vulnerabilitymanagement/Content/Analysis/LuminMetrics.htm) in the *TenableVM Vulnerability Management User Guide*.\n\nThis attribute is only present if you have a Lumin license.",
                                                                 "type": "integer"
                                                             },
                                                             "fqdn": {
@@ -223,7 +223,7 @@
                                                     "type": "array"
                                                 },
                                                 "total": {
-                                                    "description": "The total number of assets in your Tenable.io instance.",
+                                                    "description": "The total number of assets in your TenableVM instance.",
                                                     "type": "integer"
                                                 }
                                             },
@@ -267,7 +267,7 @@
                                         "schema": {
                                             "properties": {
                                                 "chunk_size": {
-                                                    "description": "Specifies the number of assets per exported chunk. The range is 100-10000. If you specify a value outside of that range, Tenable.io returns a 400 error.\n\n**Note:** Using smaller chunks size can improve performance. Tenable does not recommend using a chunk size larger than 5000 as the potential for an error increases above this amount.",
+                                                    "description": "Specifies the number of assets per exported chunk. The range is 100-10000. If you specify a value outside of that range, TenableVM returns a 400 error.\n\n**Note:** Using smaller chunks size can improve performance. Tenable does not recommend using a chunk size larger than 5000 as the potential for an error increases above this amount.",
                                                     "format": "int32",
                                                     "maximum": 10000,
                                                     "minimum": 100,
@@ -292,7 +292,7 @@
                                                             "type": "integer"
                                                         },
                                                         "has_plugin_results": {
-                                                            "description": "Filter by whether or not the asset has plugin results associated with it. If `true`, Tenable.io returns all assets that have plugin results. If `false`, Tenable.io returns all assets that do not have plugin results. An asset may not have plugin results if the asset details originated from a connector or an API import.",
+                                                            "description": "Filter by whether or not the asset has plugin results associated with it. If `true`, TenableVM returns all assets that have plugin results. If `false`, TenableVM returns all assets that do not have plugin results. An asset may not have plugin results if the asset details originated from a connector or an API import.",
                                                             "type": "boolean"
                                                         },
                                                         "is_deleted": {
@@ -300,7 +300,7 @@
                                                             "type": "boolean"
                                                         },
                                                         "is_licensed": {
-                                                            "description": "Specifies whether the asset is included in the asset count for the Tenable.io instance. If `true`, Tenable.io returns only licensed assets. If `false`, Tenable.io returns only unlicensed assets. If this filter is omitted, Tenable.io returns both licensed and unlicensed assets.",
+                                                            "description": "Specifies whether the asset is included in the asset count for the TenableVM instance. If `true`, TenableVM returns only licensed assets. If `false`, TenableVM returns only unlicensed assets. If this filter is omitted, TenableVM returns both licensed and unlicensed assets.",
                                                             "type": "boolean"
                                                         },
                                                         "is_terminated": {
@@ -308,7 +308,7 @@
                                                             "type": "boolean"
                                                         },
                                                         "last_assessed": {
-                                                            "description": "Returns all assets with a last assessed time later than the date specified. Tenable.io considers an asset assessed if it has been scanned by a credentialed or non-credentialed scan. The specified date must be in the Unix timestamp format.",
+                                                            "description": "Returns all assets with a last assessed time later than the date specified. TenableVM considers an asset assessed if it has been scanned by a credentialed or non-credentialed scan. The specified date must be in the Unix timestamp format.",
                                                             "format": "int64",
                                                             "type": "integer"
                                                         },
@@ -326,14 +326,14 @@
                                                             "type": "boolean"
                                                         },
                                                         "sources": {
-                                                            "description": "Returns assets that have the specified source. An asset source is the entity that reported the asset details. Sources can include sensors, connectors, and API imports. If your request specifies multiple sources, Tenable.io returns all assets that have been seen by any of the specified sources.\n\nThe items in the sources array must correspond to the names of the sources as defined in your organization's implementation of Tenable.io. Commonly used names include:\n - AWS—You obtained the asset data from an Amazon Web Services connector.\n - NESSUS_AGENT—You obtained the asset data obtained from a Nessus agent scan.\n - PVS—You obtained the asset data from a Nessus Network Monitor (NNM) scan.\n - NESSUS_SCAN—You obtained the asset data from a Nessus scan.\n - WAS—You obtained the asset data from a  Web Application Scanning scan.",
+                                                            "description": "Returns assets that have the specified source. An asset source is the entity that reported the asset details. Sources can include sensors, connectors, and API imports. If your request specifies multiple sources, TenableVM returns all assets that have been seen by any of the specified sources.\n\nThe items in the sources array must correspond to the names of the sources as defined in your organization's implementation of TenableVM. Commonly used names include:\n - AWS—You obtained the asset data from an Amazon Web Services connector.\n - NESSUS_AGENT—You obtained the asset data obtained from a Nessus agent scan.\n - PVS—You obtained the asset data from a Nessus Network Monitor (NNM) scan.\n - NESSUS_SCAN—You obtained the asset data from a Nessus scan.\n - WAS—You obtained the asset data from a  Web Application Scanning scan.",
                                                             "items": {
                                                                 "type": "string"
                                                             },
                                                             "type": "array"
                                                         },
                                                         "tag.<category>": {
-                                                            "description": "Returns all assets with the specified tag. The filter is defined as \"tag\", a period (\".\"), and the tag category name. The value of the filter is the tag value. For more information about tags, see [Tenable.io Vulnerability Management User Guide](https://docs.tenable.com/tenableio/vulnerabilitymanagement/Content/Settings/TagFormatAndApplication.htm).",
+                                                            "description": "Returns all assets with the specified tag. The filter is defined as \"tag\", a period (\".\"), and the tag category name. The value of the filter is the tag value. For more information about tags, see [TenableVM Vulnerability Management User Guide](https://docs.tenable.com/tenableio/vulnerabilitymanagement/Content/Settings/TagFormatAndApplication.htm).",
                                                             "type": "string"
                                                         },
                                                         "terminated_at": {
@@ -359,7 +359,7 @@
                                 ],
                                 "responses": {
                                     "200": {
-                                        "description": "Returned if Tenable.io successfully queues an assets export request.",
+                                        "description": "Returned if TenableVM successfully queues an assets export request.",
                                         "schema": {
                                             "properties": {
                                                 "export_uuid": {
@@ -427,7 +427,7 @@
                                                                 "type": "integer"
                                                             },
                                                             "status": {
-                                                                "description": "The status of the export request. Possible values include:\n - QUEUED—Tenable.io has queued the export request until it completes other requests currently in process.\n - PROCESSING—Tenable.io has started processing the export request.\n - FINISHED—Tenable.io has completed processing the export request. The list of chunks is complete.\n - CANCELLED—An administrator has cancelled the export request.\n - ERROR—Tenable.io encountered an error while processing the export request. Tenable recommends that you retry the request. If the status persists on retry, contact Support.",
+                                                                "description": "The status of the export request. Possible values include:\n - QUEUED—TenableVM has queued the export request until it completes other requests currently in process.\n - PROCESSING—TenableVM has started processing the export request.\n - FINISHED—TenableVM has completed processing the export request. The list of chunks is complete.\n - CANCELLED—An administrator has cancelled the export request.\n - ERROR—TenableVM encountered an error while processing the export request. Tenable recommends that you retry the request. If the status persists on retry, contact Support.",
                                                                 "type": "string"
                                                             },
                                                             "total_chunks": {
@@ -487,7 +487,7 @@
                                 ],
                                 "responses": {
                                     "200": {
-                                        "description": "Returned if Tenable.io successfully cancels the specified export request.",
+                                        "description": "Returned if TenableVM successfully cancels the specified export request.",
                                         "schema": {
                                             "properties": {
                                                 "status": {
@@ -503,7 +503,7 @@
                                         "schema": {
                                             "properties": {
                                                 "message": {
-                                                    "description": "Text describing the error condition Tenable.io encountered. Possible values include:\n\n - Cannot cancel a completed job\n - Export UUID is invalid",
+                                                    "description": "Text describing the error condition TenableVM encountered. Possible values include:\n\n - Cannot cancel a completed job\n - Export UUID is invalid",
                                                     "type": "string"
                                                 },
                                                 "status": {
@@ -515,11 +515,11 @@
                                         }
                                     },
                                     "404": {
-                                        "description": "Returned if Tenable.io cannot find an export job with the specified UUID.",
+                                        "description": "Returned if TenableVM cannot find an export job with the specified UUID.",
                                         "schema": {
                                             "properties": {
                                                 "message": {
-                                                    "description": "Text describing the error condition Tenable.io encountered.",
+                                                    "description": "Text describing the error condition TenableVM encountered.",
                                                     "type": "string"
                                                 },
                                                 "status": {
@@ -542,7 +542,7 @@
                                 "tags": [
                                     "Exports"
                                 ],
-                                "description": "Cancels the specified assets export job. If you cancel an export job, Tenable.io finishes any chunk that is currently processing, terminates the processing of any unprocessed chunks, and updates the job status to `CANCELLED`. If a canceled job includes completed chunks, you can download those chunks for three days after cancellation.",
+                                "description": "Cancels the specified assets export job. If you cancel an export job, TenableVM finishes any chunk that is currently processing, terminates the processing of any unprocessed chunks, and updates the job status to `CANCELLED`. If a canceled job includes completed chunks, you can download those chunks for three days after cancellation.",
                                 "operationId": "exports-assets-export-cancel",
                                 "summary": "Cancel asset export"
                             }
@@ -576,7 +576,7 @@
                                         "schema": {
                                             "properties": {
                                                 "tags": {
-                                                    "description": "Category tags assigned to the asset in Tenable.io.",
+                                                    "description": "Category tags assigned to the asset in TenableVM.",
                                                     "items": {
                                                         "properties": {
                                                             "added_at": {
@@ -605,7 +605,7 @@
                                                     "type": "array"
                                                 },
                                                 "acr_score": {
-                                                    "description": "The Asset Criticality Rating (ACR) for the asset. With Lumin, Tenable assigns an ACR to each asset on your network to represent the asset's relative risk as an integer from 1 to 10. For more information, see [Lumin Metrics](https://docs.tenable.com/tenableio/vulnerabilitymanagement/Content/Analysis/LuminMetrics.htm) in the *Tenable.io Vulnerability Management User Guide*.\n\nThis attribute is only present if you have a Lumin license.",
+                                                    "description": "The Asset Criticality Rating (ACR) for the asset. With Lumin, Tenable assigns an ACR to each asset on your network to represent the asset's relative risk as an integer from 1 to 10. For more information, see [Lumin Metrics](https://docs.tenable.com/tenableio/vulnerabilitymanagement/Content/Analysis/LuminMetrics.htm) in the *TenableVM Vulnerability Management User Guide*.\n\nThis attribute is only present if you have a Lumin license.",
                                                     "type": "string"
                                                 },
                                                 "agent_names": {
@@ -684,11 +684,11 @@
                                                     "type": "string"
                                                 },
                                                 "created_at": {
-                                                    "description": "The time and date when Tenable.io created the asset record.",
+                                                    "description": "The time and date when TenableVM created the asset record.",
                                                     "type": "string"
                                                 },
                                                 "deleted_at": {
-                                                    "description": "The time and date when a user deleted the asset record. When a user deletes an asset record, Tenable.io retains the record until the asset ages out of the license count.",
+                                                    "description": "The time and date when a user deleted the asset record. When a user deletes an asset record, TenableVM retains the record until the asset ages out of the license count.",
                                                     "type": "string"
                                                 },
                                                 "deleted_by": {
@@ -696,7 +696,7 @@
                                                     "type": "string"
                                                 },
                                                 "exposure_score": {
-                                                    "description": "The Asset Exposure Score (AES) for the asset. For more information, see [Lumin Metrics](https://docs.tenable.com/tenableio/vulnerabilitymanagement/Content/Analysis/LuminMetrics.htm) in the *Tenable.io Vulnerability Management User Guide*.\n\nThis attribute is only present if you have a Lumin license.",
+                                                    "description": "The Asset Exposure Score (AES) for the asset. For more information, see [Lumin Metrics](https://docs.tenable.com/tenableio/vulnerabilitymanagement/Content/Analysis/LuminMetrics.htm) in the *TenableVM Vulnerability Management User Guide*.\n\nThis attribute is only present if you have a Lumin license.",
                                                     "type": "string"
                                                 },
                                                 "first_scan_time": {
@@ -742,11 +742,11 @@
                                                     "type": "array"
                                                 },
                                                 "id": {
-                                                    "description": "The UUID of the asset in Tenable.io. Use this value as the unique key for the asset.",
+                                                    "description": "The UUID of the asset in TenableVM. Use this value as the unique key for the asset.",
                                                     "type": "string"
                                                 },
                                                 "installed_software": {
-                                                    "description": "A list of Common Platform Enumeration (CPE) values that represent software applications a scan identified as present on an asset. This attribute supports the CPE 2.2 format. For more information, see the \"Component Syntax\" section of the [CPE Specification, Version 2.2](https://cpe.mitre.org/files/cpe-specification_2.2.pdf). For assets identified in Tenable scans, this attribute contains data only if a scan using [Nessus Plugin ID 45590](https://www.tenable.com/plugins/nessus/45590) has evaluated the asset.\n\n**Note:** If no scan detects an application within 30 days of the scan that originally detected the application, Tenable.io considers the detection of that application expired. As a result, the next time a scan evaluates the asset, Tenable.io removes the expired application from the installed_software attribute. This activity is logged as a `remove` type of `attribute_change` update in the asset activity log.",
+                                                    "description": "A list of Common Platform Enumeration (CPE) values that represent software applications a scan identified as present on an asset. This attribute supports the CPE 2.2 format. For more information, see the \"Component Syntax\" section of the [CPE Specification, Version 2.2](https://cpe.mitre.org/files/cpe-specification_2.2.pdf). For assets identified in Tenable scans, this attribute contains data only if a scan using [Nessus Plugin ID 45590](https://www.tenable.com/plugins/nessus/45590) has evaluated the asset.\n\n**Note:** If no scan detects an application within 30 days of the scan that originally detected the application, TenableVM considers the detection of that application expired. As a result, the next time a scan evaluates the asset, TenableVM removes the expired application from the installed_software attribute. This activity is logged as a `remove` type of `attribute_change` update in the asset activity log.",
                                                     "items": {
                                                         "type": "string"
                                                     },
@@ -771,7 +771,7 @@
                                                     "type": "string"
                                                 },
                                                 "last_licensed_scan_date": {
-                                                    "description": "The time and date of the last scan that identified the asset as licensed. Tenable.io categorizes an asset as licensed if a scan of that asset has returned results from a non-discovery plugin within the last 90 days.",
+                                                    "description": "The time and date of the last scan that identified the asset as licensed. TenableVM categorizes an asset as licensed if a scan of that asset has returned results from a non-discovery plugin within the last 90 days.",
                                                     "type": "string"
                                                 },
                                                 "last_scan_id": {
@@ -958,7 +958,7 @@
                                         "description": "Returned if you do not have permission to export assets."
                                     },
                                     "404": {
-                                        "description": "Returned if Tenable.io cannot find a chunk with the specified UUID, or if the chunk with the specified UUID has expired."
+                                        "description": "Returned if TenableVM cannot find a chunk with the specified UUID, or if the chunk with the specified UUID has expired."
                                     },
                                     "429": {
                                         "description": "Returned if you attempt to send too many requests in a specific period of time. For more information, see [Rate Limiting](doc:rate-limiting)."
@@ -972,7 +972,7 @@
                                 "tags": [
                                     "Exports"
                                 ],
-                                "description": "Downloads exported assets chunk by ID. Chunks are available for download for up to 24 hours after they have been created. Tenable.io returns a 404 message for expired chunks.",
+                                "description": "Downloads exported assets chunk by ID. Chunks are available for download for up to 24 hours after they have been created. TenableVM returns a 404 message for expired chunks.",
                                 "operationId": "exports-assets-download-chunk",
                                 "summary": "Download assets chunk"
                             }
@@ -1017,7 +1017,7 @@
                                                             "type": "array"
                                                         },
                                                         "status": {
-                                                            "description": "The status of the export request. Possible values include:\n - QUEUED—Tenable.io has queued the export request until it completes other requests currently in process.\n - PROCESSING—Tenable.io has started processing the export request.\n - FINISHED—Tenable.io has completed processing the export request. The list of chunks is complete.\n - CANCELLED—An administrator has cancelled the export request.\n - ERROR—Tenable.io encountered an error while processing the export request. Tenable recommends that you retry the request. If the status persists on retry, contact Support.",
+                                                            "description": "The status of the export request. Possible values include:\n - QUEUED—TenableVM has queued the export request until it completes other requests currently in process.\n - PROCESSING—TenableVM has started processing the export request.\n - FINISHED—TenableVM has completed processing the export request. The list of chunks is complete.\n - CANCELLED—An administrator has cancelled the export request.\n - ERROR—TenableVM encountered an error while processing the export request. Tenable recommends that you retry the request. If the status persists on retry, contact Support.",
                                                             "type": "string"
                                                         }
                                                     },
@@ -1031,7 +1031,7 @@
                                         "description": "Returned if you do not have permission to view the assets export status."
                                     },
                                     "404": {
-                                        "description": "Returned if Tenable.io cannot find an assets export with the specified UUID."
+                                        "description": "Returned if TenableVM cannot find an assets export with the specified UUID."
                                     },
                                     "429": {
                                         "description": "Returned if you attempt to send too many requests in a specific period of time. For more information, see [Rate Limiting](doc:rate-limiting)."
@@ -1045,7 +1045,7 @@
                                 "tags": [
                                     "Exports"
                                 ],
-                                "description": "Returns the status of an assets export request. Tenable.io processes the chunks in parallel so the chunks may not complete in order, and the chunk IDs may not be arranged sequentially in the completed output.",
+                                "description": "Returns the status of an assets export request. TenableVM processes the chunks in parallel so the chunks may not complete in order, and the chunk IDs may not be arranged sequentially in the completed output.",
                                 "operationId": "exports-assets-export-status",
                                 "summary": "Get assets export status"
                             }
@@ -1071,7 +1071,7 @@
                                         "schema": {
                                             "properties": {
                                                 "tags": {
-                                                    "description": "Category tags assigned to the asset in Tenable.io.",
+                                                    "description": "Category tags assigned to the asset in TenableVM.",
                                                     "items": {
                                                         "properties": {
                                                             "added_at": {
@@ -1100,7 +1100,7 @@
                                                     "type": "array"
                                                 },
                                                 "acr_drivers": {
-                                                    "description": "The key drivers that Tenable uses to calculate an asset's Tenable-provided ACR. For more information, see [Lumin Metrics](https://docs.tenable.com/tenableio/vulnerabilitymanagement/Content/Analysis/LuminMetrics.htm) in the *Tenable.io Vulnerability Management User Guide*.\n\nThis attribute is only present if you have a Lumin license.",
+                                                    "description": "The key drivers that Tenable uses to calculate an asset's Tenable-provided ACR. For more information, see [Lumin Metrics](https://docs.tenable.com/tenableio/vulnerabilitymanagement/Content/Analysis/LuminMetrics.htm) in the *TenableVM Vulnerability Management User Guide*.\n\nThis attribute is only present if you have a Lumin license.",
                                                     "items": {
                                                         "description": "Information about an asset characteristic that factored into the ACR score calculation.",
                                                         "properties": {
@@ -1121,7 +1121,7 @@
                                                     "type": "array"
                                                 },
                                                 "acr_score": {
-                                                    "description": "The Asset Criticality Rating (ACR) for the asset. Tenable assigns an ACR to each asset on your network to represent the asset's relative risk as an integer from 1 to 10. For more information, see [Lumin Metrics](https://docs.tenable.com/tenableio/vulnerabilitymanagement/Content/Analysis/LuminMetrics.htm) in the *Tenable.io Vulnerability Management User Guide*.\n\nThis attribute is only present if you have a Lumin license.",
+                                                    "description": "The Asset Criticality Rating (ACR) for the asset. Tenable assigns an ACR to each asset on your network to represent the asset's relative risk as an integer from 1 to 10. For more information, see [Lumin Metrics](https://docs.tenable.com/tenableio/vulnerabilitymanagement/Content/Analysis/LuminMetrics.htm) in the *TenableVM Vulnerability Management User Guide*.\n\nThis attribute is only present if you have a Lumin license.",
                                                     "type": "integer"
                                                 },
                                                 "agent_name": {
@@ -1237,11 +1237,11 @@
                                                     "type": "array"
                                                 },
                                                 "created_at": {
-                                                    "description": "The time and date when Tenable.io created the asset record.",
+                                                    "description": "The time and date when TenableVM created the asset record.",
                                                     "type": "string"
                                                 },
                                                 "exposure_score": {
-                                                    "description": "The Asset Exposure Score (AES) for the asset. For more information, see [Lumin Metrics](https://docs.tenable.com/tenableio/vulnerabilitymanagement/Content/Analysis/LuminMetrics.htm) in the *Tenable.io Vulnerability Management User Guide*.",
+                                                    "description": "The Asset Exposure Score (AES) for the asset. For more information, see [Lumin Metrics](https://docs.tenable.com/tenableio/vulnerabilitymanagement/Content/Analysis/LuminMetrics.htm) in the *TenableVM Vulnerability Management User Guide*.",
                                                     "type": "integer"
                                                 },
                                                 "first_seen": {
@@ -1292,7 +1292,7 @@
                                                     "type": "string"
                                                 },
                                                 "installed_software": {
-                                                    "description": "A list of Common Platform Enumeration (CPE) values that represent software applications a scan identified as present on an asset. This attribute supports the CPE 2.2 format. For more information, see the \"Component Syntax\" section of the [CPE Specification, Version 2.2](https://cpe.mitre.org/files/cpe-specification_2.2.pdf). For assets identified in Tenable scans, this attribute contains data only if a scan using [Nessus Plugin ID 45590](https://www.tenable.com/plugins/nessus/45590) has evaluated the asset.\n\n**Note:** If no scan detects an application within 30 days of the scan that originally detected the application, Tenable.io considers the detection of that application expired. As a result, the next time a scan evaluates the asset, Tenable.io removes the expired application from the installed_software attribute. This activity is logged as a `remove` type of `attribute_change` update in the asset activity log.",
+                                                    "description": "A list of Common Platform Enumeration (CPE) values that represent software applications a scan identified as present on an asset. This attribute supports the CPE 2.2 format. For more information, see the \"Component Syntax\" section of the [CPE Specification, Version 2.2](https://cpe.mitre.org/files/cpe-specification_2.2.pdf). For assets identified in Tenable scans, this attribute contains data only if a scan using [Nessus Plugin ID 45590](https://www.tenable.com/plugins/nessus/45590) has evaluated the asset.\n\n**Note:** If no scan detects an application within 30 days of the scan that originally detected the application, TenableVM considers the detection of that application expired. As a result, the next time a scan evaluates the asset, TenableVM removes the expired application from the installed_software attribute. This activity is logged as a `remove` type of `attribute_change` update in the asset activity log.",
                                                     "items": {
                                                         "type": "string"
                                                     },
@@ -1317,7 +1317,7 @@
                                                     "type": "string"
                                                 },
                                                 "last_licensed_scan_date": {
-                                                    "description": "The time and date of the last scan that identified the asset as licensed. Tenable.io categorizes an asset as licensed if a scan of that asset has returned results from a non-discovery plugin within the last 90 days.",
+                                                    "description": "The time and date of the last scan that identified the asset as licensed. TenableVM categorizes an asset as licensed if a scan of that asset has returned results from a non-discovery plugin within the last 90 days.",
                                                     "type": "string"
                                                 },
                                                 "last_scan_target": {
@@ -1452,7 +1452,7 @@
                                                     "type": "array"
                                                 },
                                                 "tenable_uuid": {
-                                                    "description": "The UUID of the agent if an agent is present on the asset. If no agent is present on the asset, then the UUID is a unique identifier assigned by Tenable.io during a credentialed scan when the [Create unique identifier on hosts scanned with credentials](https://docs.tenable.com/tenableio/vulnerabilitymanagement/Content/Scans/Classic/AdvancedSettings.htm) option is enabled. Note that no UUID is set for uncredentialed, non-agent scans.",
+                                                    "description": "The UUID of the agent if an agent is present on the asset. If no agent is present on the asset, then the UUID is a unique identifier assigned by TenableVM during a credentialed scan when the [Create unique identifier on hosts scanned with credentials](https://docs.tenable.com/tenableio/vulnerabilitymanagement/Content/Scans/Classic/AdvancedSettings.htm) option is enabled. Note that no UUID is set for uncredentialed, non-agent scans.",
                                                     "items": {
                                                         "type": "string"
                                                     },
@@ -1494,14 +1494,14 @@
                                 ],
                                 "parameters": [
                                     {
-                                        "description": "A filter condition in the `field.operator:value` format. Filter conditions can include:\n* date.gt:&lt;YYYY-MM-DD>—Tenable.io returns events only if the date when the events occurred is after the date you specify. For example: `f=date.gt:2017-12-31`\n* date.lt:&lt;YYYY-MM-DD>—Tenable.io returns events only if the date when the events occurred is before the date you specify. For example: `f=date.lt:2017-12-31`\n* actor_id.match:&lt;UUID>—Tenable.io returns only the events with a matching actor UUID. For example: `f=actor_id.match:ee512c41-282e-489c-a2cf-8bda1151e630`\n* target_id.match:&lt;UUID>—Tenable.io returns only the events with a matching target UUID. For example: `f=target_id.match:ee512c41-282e-489c-a2cf-8bda1151e630`\n\nYou can specify multiple `f` parameters, separated by ampersand (&) characters. For example: `?f=date.gt:2018-12-31&f=date.lt:2019-12-31&f=actor_id.match:f54eeec5-84e0-44bb-9ebe-64898bea0e59&limit=5000`",
+                                        "description": "A filter condition in the `field.operator:value` format. Filter conditions can include:\n* date.gt:&lt;YYYY-MM-DD>—TenableVM returns events only if the date when the events occurred is after the date you specify. For example: `f=date.gt:2017-12-31`\n* date.lt:&lt;YYYY-MM-DD>—TenableVM returns events only if the date when the events occurred is before the date you specify. For example: `f=date.lt:2017-12-31`\n* actor_id.match:&lt;UUID>—TenableVM returns only the events with a matching actor UUID. For example: `f=actor_id.match:ee512c41-282e-489c-a2cf-8bda1151e630`\n* target_id.match:&lt;UUID>—TenableVM returns only the events with a matching target UUID. For example: `f=target_id.match:ee512c41-282e-489c-a2cf-8bda1151e630`\n\nYou can specify multiple `f` parameters, separated by ampersand (&) characters. For example: `?f=date.gt:2018-12-31&f=date.lt:2019-12-31&f=actor_id.match:f54eeec5-84e0-44bb-9ebe-64898bea0e59&limit=5000`",
                                         "in": "query",
                                         "name": "f",
                                         "required": false,
                                         "type": "string"
                                     },
                                     {
-                                        "description": "Sets the limit for how many events Tenable.io should return by the call. By default, this value is 50. For example: `limit=5000`",
+                                        "description": "Sets the limit for how many events TenableVM should return by the call. By default, this value is 50. For example: `limit=5000`",
                                         "format": "int32",
                                         "in": "query",
                                         "name": "limit",
@@ -1567,7 +1567,7 @@
                                                         "type": "boolean"
                                                     },
                                                     "is_failure": {
-                                                        "description": "Indicates whether the action the user took succeeded or failed. Tenable.io logs an event regardless of whether a user action succeeds.",
+                                                        "description": "Indicates whether the action the user took succeeded or failed. TenableVM logs an event regardless of whether a user action succeeds.",
                                                         "type": "boolean"
                                                     },
                                                     "received": {
@@ -1631,7 +1631,7 @@
                                             "items": {
                                                 "properties": {
                                                     "aws_update_interval": {
-                                                        "description": "Specifies how often, in minutes, the scanner checks in with Tenable.io (Amazon Web Services scanners only).",
+                                                        "description": "Specifies how often, in minutes, the scanner checks in with TenableVM (Amazon Web Services scanners only).",
                                                         "type": "integer"
                                                     },
                                                     "creation_date": {
@@ -1666,7 +1666,7 @@
                                                         "type": "array"
                                                     },
                                                     "key": {
-                                                        "description": "The linking key, that is, the alpha-numeric sequence of characters you use to link a scanner to Tenable.io. For more information about linking a scanner to Tenable.io, see the [Tenable.io Vulnerability Management Guide](https://docs.tenable.com/tenableio/vulnerabilitymanagement/Content/Settings/LinkaSensor.htm).",
+                                                        "description": "The linking key, that is, the alpha-numeric sequence of characters you use to link a scanner to TenableVM. For more information about linking a scanner to TenableVM, see the [TenableVM Vulnerability Management Guide](https://docs.tenable.com/tenableio/vulnerabilitymanagement/Content/Settings/LinkaSensor.htm).",
                                                         "type": "string"
                                                     },
                                                     "last_connect": {
@@ -1704,7 +1704,7 @@
                                                                                 "type": "string"
                                                                             },
                                                                             "type": {
-                                                                                "description": "Indicates that the scanner is licensed to perform Tenable.io Container Security scans.",
+                                                                                "description": "Indicates that the scanner is licensed to perform TenableVM Container Security scans.",
                                                                                 "type": "string"
                                                                             }
                                                                         },
@@ -1729,7 +1729,7 @@
                                                                                 "type": "string"
                                                                             },
                                                                             "type": {
-                                                                                "description": "Indicates that the scanner is licensed to perform Tenable.io Web Application Scanning scans.",
+                                                                                "description": "Indicates that the scanner is licensed to perform TenableVM Web Application Scanning scans.",
                                                                                 "type": "string"
                                                                             },
                                                                             "web_assets": {
@@ -1905,7 +1905,7 @@
                                         "schema": {
                                             "properties": {
                                                 "aws_update_interval": {
-                                                    "description": "Specifies how often, in minutes, the scanner checks in with Tenable.io (Amazon Web Services scanners only).",
+                                                    "description": "Specifies how often, in minutes, the scanner checks in with TenableVM (Amazon Web Services scanners only).",
                                                     "type": "integer"
                                                 },
                                                 "creation_date": {
@@ -1940,7 +1940,7 @@
                                                     "type": "array"
                                                 },
                                                 "key": {
-                                                    "description": "The linking key, that is, the alpha-numeric sequence of characters you use to link a scanner to Tenable.io. For more information about linking a scanner to Tenable.io, see the [Tenable.io Vulnerability Management Guide](https://docs.tenable.com/tenableio/vulnerabilitymanagement/Content/Settings/LinkaSensor.htm).",
+                                                    "description": "The linking key, that is, the alpha-numeric sequence of characters you use to link a scanner to TenableVM. For more information about linking a scanner to TenableVM, see the [TenableVM Vulnerability Management Guide](https://docs.tenable.com/tenableio/vulnerabilitymanagement/Content/Settings/LinkaSensor.htm).",
                                                     "type": "string"
                                                 },
                                                 "last_connect": {
@@ -1978,7 +1978,7 @@
                                                                             "type": "string"
                                                                         },
                                                                         "type": {
-                                                                            "description": "Indicates that the scanner is licensed to perform Tenable.io Container Security scans.",
+                                                                            "description": "Indicates that the scanner is licensed to perform TenableVM Container Security scans.",
                                                                             "type": "string"
                                                                         }
                                                                     },
@@ -2003,7 +2003,7 @@
                                                                             "type": "string"
                                                                         },
                                                                         "type": {
-                                                                            "description": "Indicates that the scanner is licensed to perform Tenable.io Web Application Scanning scans.",
+                                                                            "description": "Indicates that the scanner is licensed to perform TenableVM Web Application Scanning scans.",
                                                                             "type": "string"
                                                                         },
                                                                         "web_assets": {
@@ -2139,7 +2139,7 @@
                                         "description": "Returned if you do not have permission to view the specified scanner."
                                     },
                                     "404": {
-                                        "description": "Returned if Tenable.io cannot find the specified scanner."
+                                        "description": "Returned if TenableVM cannot find the specified scanner."
                                     },
                                     "429": {
                                         "description": "Returned if you attempt to send too many requests in a specific period of time. For more information, see [Rate Limiting](doc:rate-limiting)."
@@ -2227,7 +2227,7 @@
                                         "description": "Returned if you do not have permission to view scanner data."
                                     },
                                     "404": {
-                                        "description": "Returned if Tenable.io cannot find the specified scanner."
+                                        "description": "Returned if TenableVM cannot find the specified scanner."
                                     },
                                     "429": {
                                         "description": "Returned if you attempt to send too many requests in a specific period of time. For more information, see [Rate Limiting](doc:rate-limiting)."
@@ -2293,11 +2293,11 @@
                                                                 "type": "string"
                                                             },
                                                             "type": {
-                                                                "description": "The type of the folder:\n- main—Tenable-provided folder. Contains all scans that you create but do not assign to a custom folder, as well as any scans shared with you by other users. If you do not specify a scan folder when creating a scan, Tenable.io stores scans in this folder by default. This folder corresponds to the **My Scans** folder in the Tenable.io user interface.\n - trash—Tenable-provided folder. Contains all scans that the current user has moved to the trash folder. Scans stored in the trash folder are automatically deleted after 30 days. This folder corresponds to the **Trash** folder in the Tenable.io user interface.\n - custom—User-created folder. Contains scans as assigned by the current user. You can create custom folders to meet your organizational needs.",
+                                                                "description": "The type of the folder:\n- main—Tenable-provided folder. Contains all scans that you create but do not assign to a custom folder, as well as any scans shared with you by other users. If you do not specify a scan folder when creating a scan, TenableVM stores scans in this folder by default. This folder corresponds to the **My Scans** folder in the TenableVM user interface.\n - trash—Tenable-provided folder. Contains all scans that the current user has moved to the trash folder. Scans stored in the trash folder are automatically deleted after 30 days. This folder corresponds to the **Trash** folder in the TenableVM user interface.\n - custom—User-created folder. Contains scans as assigned by the current user. You can create custom folders to meet your organizational needs.",
                                                                 "type": "string"
                                                             },
                                                             "unread_count": {
-                                                                "description": "The number of scans in the folder that the current user has not yet viewed in the Tenable.io user interface.",
+                                                                "description": "The number of scans in the folder that the current user has not yet viewed in the TenableVM user interface.",
                                                                 "type": "integer"
                                                             }
                                                         },
@@ -2327,12 +2327,12 @@
                                                                 "type": "integer"
                                                             },
                                                             "last_modification_date": {
-                                                                "description": "For newly-created scans, the date on which the scan configuration was created. For scans that have been launched at least once, this attribute does not represent the date on which the scan configuration was last modified. Instead, it represents the date on which the scan was last launched, in Unix time format. Tenable.io updates this attribute each time the scan launches.",
+                                                                "description": "For newly-created scans, the date on which the scan configuration was created. For scans that have been launched at least once, this attribute does not represent the date on which the scan configuration was last modified. Instead, it represents the date on which the scan was last launched, in Unix time format. TenableVM updates this attribute each time the scan launches.",
                                                                 "format": "int32",
                                                                 "type": "integer"
                                                             },
                                                             "legacy": {
-                                                                "description": "A value indicating whether the scan results were created before a change in storage method. If `true`, Tenable.io stores the results in the old storage method. If `false`, Tenable.io stores the results in the new storage method.",
+                                                                "description": "A value indicating whether the scan results were created before a change in storage method. If `true`, TenableVM stores the results in the old storage method. If `false`, TenableVM stores the results in the new storage method.",
                                                                 "type": "boolean"
                                                             },
                                                             "name": {
@@ -2353,7 +2353,7 @@
                                                                 "type": "integer"
                                                             },
                                                             "read": {
-                                                                "description": "A value indicating whether the user account associated with the request message has viewed the scan in the Tenable.io user interface. If `1`, the user account has viewed the scan results.",
+                                                                "description": "A value indicating whether the user account associated with the request message has viewed the scan in the TenableVM user interface. If `1`, the user account has viewed the scan results.",
                                                                 "type": "boolean"
                                                             },
                                                             "rrules": {
@@ -2403,7 +2403,7 @@
                                                     "type": "array"
                                                 },
                                                 "timestamp": {
-                                                    "description": "The Unix timestamp when Tenable.io received the list request.",
+                                                    "description": "The Unix timestamp when TenableVM received the list request.",
                                                     "format": "int32",
                                                     "type": "integer"
                                                 }
@@ -2529,11 +2529,11 @@
                                                             "items": {
                                                                 "properties": {
                                                                     "display_name": {
-                                                                        "description": "The name of the user or group granted the specified permissions, as it appears in the Tenable.io user interface.",
+                                                                        "description": "The name of the user or group granted the specified permissions, as it appears in the TenableVM user interface.",
                                                                         "type": "string"
                                                                     },
                                                                     "id": {
-                                                                        "description": "A number representing the order in which the user or user groups display in the Permissions tab in the Tenable.io user interface.",
+                                                                        "description": "A number representing the order in which the user or user groups display in the Permissions tab in the TenableVM user interface.",
                                                                         "type": "integer"
                                                                     },
                                                                     "name": {
@@ -2581,15 +2581,15 @@
                                                             "type": "string"
                                                         },
                                                         "enabled": {
-                                                            "description": "If `true`, the schedule for the scan is enabled. If you omit this parameter from the request, Tenable.io assigns the default value `true`. This parameter corresponds to the **Enabled** toggle in scan schedule settings in the Tenable.io user interface. Note that scheduled scans do not run if they are in the scan owner's trash folder.",
+                                                            "description": "If `true`, the schedule for the scan is enabled. If you omit this parameter from the request, TenableVM assigns the default value `true`. This parameter corresponds to the **Enabled** toggle in scan schedule settings in the TenableVM user interface. Note that scheduled scans do not run if they are in the scan owner's trash folder.",
                                                             "type": "boolean"
                                                         },
                                                         "file_targets": {
-                                                            "description": "The name of a file containing the list of targets to scan. Before you use this parameter, use the [POST /files/upload](ref:file-upload) endpoint to upload the file to Tenable.io; then, use the `fileuploaded` attribute of the response message as the `file_targets` parameter value.\n\nThis parameter is required if your request omits other target parameters. For more information, see \"Required Scan Target Parameters\" in [Create a Scan](doc:create-scan-tio).\n\n **Note:** Unicode/UTF-8 encoding is not supported in the targets file.",
+                                                            "description": "The name of a file containing the list of targets to scan. Before you use this parameter, use the [POST /files/upload](ref:file-upload) endpoint to upload the file to TenableVM; then, use the `fileuploaded` attribute of the response message as the `file_targets` parameter value.\n\nThis parameter is required if your request omits other target parameters. For more information, see \"Required Scan Target Parameters\" in [Create a Scan](doc:create-scan-tio).\n\n **Note:** Unicode/UTF-8 encoding is not supported in the targets file.",
                                                             "type": "string"
                                                         },
                                                         "folder_id": {
-                                                            "description": "The unique ID of the folder where you want to store the scan. Use the [GET /folders](ref:folders-list) endpoint to find the folder ID. If you omit this parameter from the request, Tenable.io assigns the ID of the Tenable-provided `main` folder.",
+                                                            "description": "The unique ID of the folder where you want to store the scan. Use the [GET /folders](ref:folders-list) endpoint to find the folder ID. If you omit this parameter from the request, TenableVM assigns the ID of the Tenable-provided `main` folder.",
                                                             "format": "int32",
                                                             "type": "integer"
                                                         },
@@ -2618,15 +2618,15 @@
                                                             "type": "string"
                                                         },
                                                         "scan_time_window": {
-                                                            "description": "This parameter depends on the type of scan: <ul><li>For Nessus agent scans, `scan_time_window` is the time frame, in minutes, during which agents must transmit scan results to Tenable.io in order to be included in dashboards and reports. If your request omits this parameter, the default value is 180 minutes.</li><li>For Nessus scanner scans, `scan_time_window` is the time frame, in minutes, after which the scan will automatically stop. If your request omits this parameter, the default value is 0 and the scan will not stop after a certain time frame.</li></ul>",
+                                                            "description": "This parameter depends on the type of scan: <ul><li>For Nessus agent scans, `scan_time_window` is the time frame, in minutes, during which agents must transmit scan results to TenableVM in order to be included in dashboards and reports. If your request omits this parameter, the default value is 180 minutes.</li><li>For Nessus scanner scans, `scan_time_window` is the time frame, in minutes, after which the scan will automatically stop. If your request omits this parameter, the default value is 0 and the scan will not stop after a certain time frame.</li></ul>",
                                                             "type": "integer"
                                                         },
                                                         "scanner_id": {
-                                                            "description": "The unique ID of the scanner to use. Use the [GET /scanners](ref:scanners-list) endpoint to find the scanner ID. You can use the special value `AUTO-ROUTED` to assign scan targets to scanner groups based on the groups' configured scan routes. For more information, see [Manage Scan Routing](doc:manage-scan-routing-tio).\n\n**Note:** If you omit this parameter from the request, Tenable.io assigns the US Cloud Scanner by default.",
+                                                            "description": "The unique ID of the scanner to use. Use the [GET /scanners](ref:scanners-list) endpoint to find the scanner ID. You can use the special value `AUTO-ROUTED` to assign scan targets to scanner groups based on the groups' configured scan routes. For more information, see [Manage Scan Routing](doc:manage-scan-routing-tio).\n\n**Note:** If you omit this parameter from the request, TenableVM assigns the US Cloud Scanner by default.",
                                                             "type": "string"
                                                         },
                                                         "starttime": {
-                                                            "description": "For one-time scans, the starting time and date for the scan. For recurrent scans, the first date on which the scan schedule is active and the time that recurring scans launch based on the `rrules` parameter.\n\nThis parameter must be in the following format: `YYYYMMDDTHHMMSS`. \n\nThis parameter corresponds to the **Starts** drop-down boxes in scan schedule settings in the Tenable.io user interface.",
+                                                            "description": "For one-time scans, the starting time and date for the scan. For recurrent scans, the first date on which the scan schedule is active and the time that recurring scans launch based on the `rrules` parameter.\n\nThis parameter must be in the following format: `YYYYMMDDTHHMMSS`. \n\nThis parameter corresponds to the **Starts** drop-down boxes in scan schedule settings in the TenableVM user interface.",
                                                             "type": "string"
                                                         },
                                                         "tag_targets": {
@@ -2645,15 +2645,15 @@
                                                             "type": "array"
                                                         },
                                                         "target_network_uuid": {
-                                                            "description": "This field is required if the `scanner_id` parameter is `AUTO-ROUTED`. Specify a value as follows:<ul><li>If your scans involve separate environments with overlapping IP ranges, specify the UUID of the [network](doc:manage-networks-tio) you want to associate with the results of the auto-routed scan. This value must match the network where you have assigned the scanner groups that you configured for scan routing.</li><li>Otherwise, specify the default network (`00000000-0000-0000-0000-000000000000`).</li></ul>\n\n**Note:** This parameter does not override network associations for scans that are not auto-routed. Tenable.io automatically associates a non-routed scan with the network to which you have assigned the scanner that performs the scan.",
+                                                            "description": "This field is required if the `scanner_id` parameter is `AUTO-ROUTED`. Specify a value as follows:<ul><li>If your scans involve separate environments with overlapping IP ranges, specify the UUID of the [network](doc:manage-networks-tio) you want to associate with the results of the auto-routed scan. This value must match the network where you have assigned the scanner groups that you configured for scan routing.</li><li>Otherwise, specify the default network (`00000000-0000-0000-0000-000000000000`).</li></ul>\n\n**Note:** This parameter does not override network associations for scans that are not auto-routed. TenableVM automatically associates a non-routed scan with the network to which you have assigned the scanner that performs the scan.",
                                                             "type": "string"
                                                         },
                                                         "text_targets": {
-                                                            "description": "The list of targets to scan. For a full list of supported target formats, see the [Tenable.io Vulnerability Management User Guide](https://docs.tenable.com/tenableio/vulnerabilitymanagement/Content/Scans/AboutScanTargets.htm). You can specify multiple targets (of differing formats) as a comma-delimited list. \n\nThis parameter is required if your request omits other target parameters. For more information, see \"Required Scan Target Parameters\" in [Create a Scan](doc:create-scan-tio). \n\n**Note:** Tenable.io does not perform validation on values you submit for this parameter. If you submit invalid values, Tenable.io stores the invalid values in the scan configuration, and when the scan runs, scanning fails on the invalid targets.",
+                                                            "description": "The list of targets to scan. For a full list of supported target formats, see the [TenableVM Vulnerability Management User Guide](https://docs.tenable.com/tenableio/vulnerabilitymanagement/Content/Scans/AboutScanTargets.htm). You can specify multiple targets (of differing formats) as a comma-delimited list. \n\nThis parameter is required if your request omits other target parameters. For more information, see \"Required Scan Target Parameters\" in [Create a Scan](doc:create-scan-tio). \n\n**Note:** TenableVM does not perform validation on values you submit for this parameter. If you submit invalid values, TenableVM stores the invalid values in the scan configuration, and when the scan runs, scanning fails on the invalid targets.",
                                                             "type": "string"
                                                         },
                                                         "timezone": {
-                                                            "description": "The timezone of the scheduled start time for the scan (as specified in the `starttime` parameter). Use the [GET /scans/timezones](ref:scans-timezones) endpoint to determine this value.\n\n Corresponds to the **Timezone** drop-down box in the scan schedule settings in the Tenable.io user interface.",
+                                                            "description": "The timezone of the scheduled start time for the scan (as specified in the `starttime` parameter). Use the [GET /scans/timezones](ref:scans-timezones) endpoint to determine this value.\n\n Corresponds to the **Timezone** drop-down box in the scan schedule settings in the TenableVM user interface.",
                                                             "type": "string"
                                                         },
                                                         "triggers": {
@@ -2709,11 +2709,11 @@
                                 ],
                                 "responses": {
                                     "200": {
-                                        "description": "Returned if Tenable.io creates the scan configuration successfully.",
+                                        "description": "Returned if TenableVM creates the scan configuration successfully.",
                                         "schema": {
                                             "properties": {
                                                 "container_id": {
-                                                    "description": "The unique ID of your Tenable.io instance.",
+                                                    "description": "The unique ID of your TenableVM instance.",
                                                     "type": "string"
                                                 },
                                                 "creation_date": {
@@ -2756,7 +2756,7 @@
                                                     "type": "boolean"
                                                 },
                                                 "last_modification_date": {
-                                                    "description": "For newly-created scans, the date on which the scan configuration was created. For scans that have been launched at least once, this attribute does not represent the date on which the scan configuration was last modified. Instead, it represents the date on which the scan was last launched, in Unix time format. Tenable.io updates this attribute each time the scan launches.",
+                                                    "description": "For newly-created scans, the date on which the scan configuration was created. For scans that have been launched at least once, this attribute does not represent the date on which the scan configuration was last modified. Instead, it represents the date on which the scan was last launched, in Unix time format. TenableVM updates this attribute each time the scan launches.",
                                                     "format": "int32",
                                                     "type": "integer"
                                                 },
@@ -2765,7 +2765,7 @@
                                                     "type": "string"
                                                 },
                                                 "notification_filters": {
-                                                    "description": "A list of filters that Tenable.io applies to determine whether it sends a notification email on scan completion to the recipients specified in the `emails` attribute.",
+                                                    "description": "A list of filters that TenableVM applies to determine whether it sends a notification email on scan completion to the recipients specified in the `emails` attribute.",
                                                     "items": {
                                                         "properties": {
                                                             "filter": {
@@ -2773,11 +2773,11 @@
                                                                 "type": "string"
                                                             },
                                                             "quality": {
-                                                                "description": "The operator Tenable.io applies to the filter value, for example, `eq`.",
+                                                                "description": "The operator TenableVM applies to the filter value, for example, `eq`.",
                                                                 "type": "string"
                                                             },
                                                             "value": {
-                                                                "description": "The attribute value Tenable.io filters on. For example, when filtering on severity, this attribute might specify `Critical`.",
+                                                                "description": "The attribute value TenableVM filters on. For example, when filtering on severity, this attribute might specify `Critical`.",
                                                                 "type": "string"
                                                             }
                                                         },
@@ -2810,7 +2810,7 @@
                                                     "type": "string"
                                                 },
                                                 "scan_time_window": {
-                                                    "description": "Depends on the type of scan: <ul><li>For Nessus agent scans, `scan_time_window` is the time frame, in minutes, during which agents must transmit scan results to Tenable.io in order to be included in dashboards and reports. If your request omits this parameter, the default value is 180 minutes.</li><li>For Nessus scanner scans, `scan_time_window` is the time frame, in minutes, after which the scan will automatically stop. If your request omits this parameter, the default value is 0 and the scan will not stop after a certain time frame.</li></ul>",
+                                                    "description": "Depends on the type of scan: <ul><li>For Nessus agent scans, `scan_time_window` is the time frame, in minutes, during which agents must transmit scan results to TenableVM in order to be included in dashboards and reports. If your request omits this parameter, the default value is 180 minutes.</li><li>For Nessus scanner scans, `scan_time_window` is the time frame, in minutes, after which the scan will automatically stop. If your request omits this parameter, the default value is 0 and the scan will not stop after a certain time frame.</li></ul>",
                                                     "type": "string"
                                                 },
                                                 "scanner_uuid": {
@@ -2842,7 +2842,7 @@
                                                     "type": "string"
                                                 },
                                                 "target_network_uuid": {
-                                                    "description": "The UUID of the network object that Tenable.io associates with the scan results if the scan is configured for [scan routing](doc:manage-scan-routing-tio).",
+                                                    "description": "The UUID of the network object that TenableVM associates with the scan results if the scan is configured for [scan routing](doc:manage-scan-routing-tio).",
                                                     "type": "string"
                                                 },
                                                 "timezone": {
@@ -2876,7 +2876,7 @@
                                         "description": "Returned if you attempt to send too many requests in a specific period of time. For more information, see [Rate Limiting](doc:rate-limiting)."
                                     },
                                     "500": {
-                                        "description": "Returned if Tenable.io encounters an error while attempting to save the scan.",
+                                        "description": "Returned if TenableVM encounters an error while attempting to save the scan.",
                                         "schema": {
                                             "properties": {
                                                 "error": {
@@ -2884,7 +2884,7 @@
                                                     "type": "integer"
                                                 },
                                                 "message": {
-                                                    "description": "A brief message describing the error Tenable.io encountered.",
+                                                    "description": "A brief message describing the error TenableVM encountered.",
                                                     "type": "string"
                                                 },
                                                 "statusCode": {
@@ -2917,21 +2917,21 @@
                                 ],
                                 "parameters": [
                                     {
-                                        "description": "The number of records to retrieve. Minimum value is `1`. Maximum value is `200`. If this parameter is omitted, Tenable.io uses the default value of `50`.",
+                                        "description": "The number of records to retrieve. Minimum value is `1`. Maximum value is `200`. If this parameter is omitted, TenableVM uses the default value of `50`.",
                                         "in": "query",
                                         "name": "limit",
                                         "required": false,
                                         "type": "integer"
                                     },
                                     {
-                                        "description": "The starting record to retrieve. Minimum value is `0`. If this parameter is omitted, Tenable.io uses the default value of `0`.",
+                                        "description": "The starting record to retrieve. Minimum value is `0`. If this parameter is omitted, TenableVM uses the default value of `0`.",
                                         "in": "query",
                                         "name": "offset",
                                         "required": false,
                                         "type": "integer"
                                     },
                                     {
-                                        "description": "The field you want to sort the results by along with the sort order. Valid sort fields: `scan_creation_date`. Valid sort orders: `desc`, `asc`. `scan_creation_date` is the Unix timestamp when the remediation scan run was created. If this parameter is omitted, Tenable.io uses the default value of `scan_creation_date:desc`.",
+                                        "description": "The field you want to sort the results by along with the sort order. Valid sort fields: `scan_creation_date`. Valid sort orders: `desc`, `asc`. `scan_creation_date` is the Unix timestamp when the remediation scan run was created. If this parameter is omitted, TenableVM uses the default value of `scan_creation_date:desc`.",
                                         "enum": [
                                             "scan_creation_date:desc",
                                             "scan_creation_date:asc"
@@ -2960,11 +2960,11 @@
                                                             "type": "integer"
                                                         },
                                                         "sort": {
-                                                            "description": "An array of objects representing the fields and sort order you specified in the request, which Tenable.io used to sort the returned data.",
+                                                            "description": "An array of objects representing the fields and sort order you specified in the request, which TenableVM used to sort the returned data.",
                                                             "items": {
                                                                 "properties": {
                                                                     "name": {
-                                                                        "description": "The field on which Tenable.io sorted the results.",
+                                                                        "description": "The field on which TenableVM sorted the results.",
                                                                         "type": "string"
                                                                     },
                                                                     "order": {
@@ -3006,7 +3006,7 @@
                                                                 "type": "integer"
                                                             },
                                                             "last_modification_date": {
-                                                                "description": "For newly-created scans, the date on which the scan configuration was created. For scans that have been launched at least once, this attribute does not represent the date on which the scan configuration was last modified. Instead, it represents the date on which the scan was last launched, in Unix time format. Tenable.io updates this attribute each time the scan launches.",
+                                                                "description": "For newly-created scans, the date on which the scan configuration was created. For scans that have been launched at least once, this attribute does not represent the date on which the scan configuration was last modified. Instead, it represents the date on which the scan was last launched, in Unix time format. TenableVM updates this attribute each time the scan launches.",
                                                                 "format": "int32",
                                                                 "type": "integer"
                                                             },
@@ -3028,7 +3028,7 @@
                                                                 "type": "integer"
                                                             },
                                                             "read": {
-                                                                "description": "A value indicating whether the user account associated with the request message has viewed the scan in the Tenable.io user interface. If `1`, the user account has viewed the scan results.",
+                                                                "description": "A value indicating whether the user account associated with the request message has viewed the scan in the TenableVM user interface. If `1`, the user account has viewed the scan results.",
                                                                 "type": "boolean"
                                                             },
                                                             "remediation": {
@@ -3174,11 +3174,11 @@
                                                             "items": {
                                                                 "properties": {
                                                                     "display_name": {
-                                                                        "description": "The name of the user or group granted the specified permissions, as it appears in the Tenable.io user interface.",
+                                                                        "description": "The name of the user or group granted the specified permissions, as it appears in the TenableVM user interface.",
                                                                         "type": "string"
                                                                     },
                                                                     "id": {
-                                                                        "description": "A number representing the order in which the user or user groups display in the Permissions tab in the Tenable.io user interface.",
+                                                                        "description": "A number representing the order in which the user or user groups display in the Permissions tab in the TenableVM user interface.",
                                                                         "type": "integer"
                                                                     },
                                                                     "name": {
@@ -3218,7 +3218,7 @@
                                                             "type": "string"
                                                         },
                                                         "file_targets": {
-                                                            "description": "The name of a file containing the list of targets to scan. Before you use this parameter, use the [POST /files/upload](ref:file-upload) endpoint to upload the file to Tenable.io; then, use the `fileuploaded` attribute of the response message as the `file_targets` parameter value.\n\nThis parameter is required if your request omits other target parameters. For more information, see \"Required Scan Target Parameters\" in [Create a Scan](doc:create-scan-tio).\n\n **Note:** Unicode/UTF-8 encoding is not supported in the targets file.",
+                                                            "description": "The name of a file containing the list of targets to scan. Before you use this parameter, use the [POST /files/upload](ref:file-upload) endpoint to upload the file to TenableVM; then, use the `fileuploaded` attribute of the response message as the `file_targets` parameter value.\n\nThis parameter is required if your request omits other target parameters. For more information, see \"Required Scan Target Parameters\" in [Create a Scan](doc:create-scan-tio).\n\n **Note:** Unicode/UTF-8 encoding is not supported in the targets file.",
                                                             "type": "string"
                                                         },
                                                         "name": {
@@ -3231,11 +3231,11 @@
                                                             "type": "integer"
                                                         },
                                                         "scan_time_window": {
-                                                            "description": "This parameter depends on the type of scan: <ul><li>For Nessus agent scans, `scan_time_window` is the time frame, in minutes, during which agents must transmit scan results to Tenable.io in order to be included in dashboards and reports. If your request omits this parameter, the default value is 180 minutes.</li><li>For Nessus scanner scans, `scan_time_window` is the time frame, in minutes, after which the scan will automatically stop. If your request omits this parameter, the default value is 0 and the scan will not stop after a certain time frame.</li></ul>",
+                                                            "description": "This parameter depends on the type of scan: <ul><li>For Nessus agent scans, `scan_time_window` is the time frame, in minutes, during which agents must transmit scan results to TenableVM in order to be included in dashboards and reports. If your request omits this parameter, the default value is 180 minutes.</li><li>For Nessus scanner scans, `scan_time_window` is the time frame, in minutes, after which the scan will automatically stop. If your request omits this parameter, the default value is 0 and the scan will not stop after a certain time frame.</li></ul>",
                                                             "type": "integer"
                                                         },
                                                         "scanner_id": {
-                                                            "description": "The unique ID of the scanner to use. Use the [GET /scanners](ref:scanners-list) endpoint to find the scanner ID. You can use the special value `AUTO-ROUTED` to assign scan targets to scanner groups based on the groups' configured scan routes. For more information, see [Manage Scan Routing](doc:manage-scan-routing-tio).\n\n**Note:** If you omit this parameter from the request, Tenable.io assigns the US Cloud Scanner by default.",
+                                                            "description": "The unique ID of the scanner to use. Use the [GET /scanners](ref:scanners-list) endpoint to find the scanner ID. You can use the special value `AUTO-ROUTED` to assign scan targets to scanner groups based on the groups' configured scan routes. For more information, see [Manage Scan Routing](doc:manage-scan-routing-tio).\n\n**Note:** If you omit this parameter from the request, TenableVM assigns the US Cloud Scanner by default.",
                                                             "type": "string"
                                                         },
                                                         "tag_targets": {
@@ -3258,7 +3258,7 @@
                                                             "type": "string"
                                                         },
                                                         "text_targets": {
-                                                            "description": "The list of targets to scan. For a full list of supported target formats, see the [Tenable.io Vulnerability Management User Guide](https://docs.tenable.com/tenableio/vulnerabilitymanagement/Content/Scans/AboutScanTargets.htm). You can specify multiple targets (of differing formats) as a comma-delimited list. \n\nThis parameter is required if your request omits other target parameters. For more information, see \"Required Scan Target Parameters\" in [Create a Scan](doc:create-scan-tio). \n\n For remediation scans, enter a valid target from a previous scan you wish to remediate. \n\n**Note:** Tenable.io does not perform validation on values you submit for this parameter. If you submit invalid values, Tenable.io stores the invalid values in the scan configuration, and when the scan runs, scanning fails on the invalid targets.",
+                                                            "description": "The list of targets to scan. For a full list of supported target formats, see the [TenableVM Vulnerability Management User Guide](https://docs.tenable.com/tenableio/vulnerabilitymanagement/Content/Scans/AboutScanTargets.htm). You can specify multiple targets (of differing formats) as a comma-delimited list. \n\nThis parameter is required if your request omits other target parameters. For more information, see \"Required Scan Target Parameters\" in [Create a Scan](doc:create-scan-tio). \n\n For remediation scans, enter a valid target from a previous scan you wish to remediate. \n\n**Note:** TenableVM does not perform validation on values you submit for this parameter. If you submit invalid values, TenableVM stores the invalid values in the scan configuration, and when the scan runs, scanning fails on the invalid targets.",
                                                             "type": "string"
                                                         }
                                                     },
@@ -3283,11 +3283,11 @@
                                 ],
                                 "responses": {
                                     "200": {
-                                        "description": "Returned if Tenable.io successfully creates the remediation scan configuration.",
+                                        "description": "Returned if TenableVM successfully creates the remediation scan configuration.",
                                         "schema": {
                                             "properties": {
                                                 "container_id": {
-                                                    "description": "The unique ID of your Tenable.io instance.",
+                                                    "description": "The unique ID of your TenableVM instance.",
                                                     "type": "string"
                                                 },
                                                 "creation_date": {
@@ -3330,7 +3330,7 @@
                                                     "type": "boolean"
                                                 },
                                                 "last_modification_date": {
-                                                    "description": "For newly-created scans, the date on which the scan configuration was created. For scans that have been launched at least once, this attribute does not represent the date on which the scan configuration was last modified. Instead, it represents the date on which the scan was last launched, in Unix time format. Tenable.io updates this attribute each time the scan launches.",
+                                                    "description": "For newly-created scans, the date on which the scan configuration was created. For scans that have been launched at least once, this attribute does not represent the date on which the scan configuration was last modified. Instead, it represents the date on which the scan was last launched, in Unix time format. TenableVM updates this attribute each time the scan launches.",
                                                     "format": "int32",
                                                     "type": "integer"
                                                 },
@@ -3339,7 +3339,7 @@
                                                     "type": "string"
                                                 },
                                                 "notification_filters": {
-                                                    "description": "A list of filters that Tenable.io applies to determine whether it sends a notification email on scan completion to the recipients specified in the `emails` attribute.",
+                                                    "description": "A list of filters that TenableVM applies to determine whether it sends a notification email on scan completion to the recipients specified in the `emails` attribute.",
                                                     "items": {
                                                         "properties": {
                                                             "filter": {
@@ -3347,11 +3347,11 @@
                                                                 "type": "string"
                                                             },
                                                             "quality": {
-                                                                "description": "The operator Tenable.io applies to the filter value, for example, `eq`.",
+                                                                "description": "The operator TenableVM applies to the filter value, for example, `eq`.",
                                                                 "type": "string"
                                                             },
                                                             "value": {
-                                                                "description": "The attribute value Tenable.io filters on. For example, when filtering on severity, this attribute might specify `Critical`.",
+                                                                "description": "The attribute value TenableVM filters on. For example, when filtering on severity, this attribute might specify `Critical`.",
                                                                 "type": "string"
                                                             }
                                                         },
@@ -3384,7 +3384,7 @@
                                                     "type": "string"
                                                 },
                                                 "scan_time_window": {
-                                                    "description": "Depends on the type of scan: <ul><li>For Nessus agent scans, `scan_time_window` is the time frame, in minutes, during which agents must transmit scan results to Tenable.io in order to be included in dashboards and reports. If your request omits this parameter, the default value is 180 minutes.</li><li>For Nessus scanner scans, `scan_time_window` is the time frame, in minutes, after which the scan will automatically stop. If your request omits this parameter, the default value is 0 and the scan will not stop after a certain time frame.</li></ul>",
+                                                    "description": "Depends on the type of scan: <ul><li>For Nessus agent scans, `scan_time_window` is the time frame, in minutes, during which agents must transmit scan results to TenableVM in order to be included in dashboards and reports. If your request omits this parameter, the default value is 180 minutes.</li><li>For Nessus scanner scans, `scan_time_window` is the time frame, in minutes, after which the scan will automatically stop. If your request omits this parameter, the default value is 0 and the scan will not stop after a certain time frame.</li></ul>",
                                                     "type": "string"
                                                 },
                                                 "scanner_uuid": {
@@ -3416,7 +3416,7 @@
                                                     "type": "string"
                                                 },
                                                 "target_network_uuid": {
-                                                    "description": "The UUID of the network object that Tenable.io associates with the scan results if the scan is configured for [scan routing](doc:manage-scan-routing-tio).",
+                                                    "description": "The UUID of the network object that TenableVM associates with the scan results if the scan is configured for [scan routing](doc:manage-scan-routing-tio).",
                                                     "type": "string"
                                                 },
                                                 "timezone": {
@@ -3450,7 +3450,7 @@
                                         "description": "Returned if you attempt to send too many requests in a specific period of time. For more information, see [Rate Limiting](doc:rate-limiting)."
                                     },
                                     "500": {
-                                        "description": "Returned if Tenable.io encounters an error while attempting to save the scan.",
+                                        "description": "Returned if TenableVM encounters an error while attempting to save the scan.",
                                         "schema": {
                                             "properties": {
                                                 "error": {
@@ -3458,7 +3458,7 @@
                                                     "type": "integer"
                                                 },
                                                 "message": {
-                                                    "description": "A brief message describing the error Tenable.io encountered.",
+                                                    "description": "A brief message describing the error TenableVM encountered.",
                                                     "type": "string"
                                                 },
                                                 "statusCode": {
@@ -3499,14 +3499,14 @@
                                         "type": "string"
                                     },
                                     {
-                                        "description": "The unique identifier of the historical data that you want Tenable.io to return. This identifier corresponds to the `history.id` attribute of the response message from the [GET /scans/{scan_id}/history](ref:scans-history) endpoint. You can use either this parameter or the `history_uuid` query parameter to specify a scan run.",
+                                        "description": "The unique identifier of the historical data that you want TenableVM to return. This identifier corresponds to the `history.id` attribute of the response message from the [GET /scans/{scan_id}/history](ref:scans-history) endpoint. You can use either this parameter or the `history_uuid` query parameter to specify a scan run.",
                                         "format": "int32",
                                         "in": "query",
                                         "name": "history_id",
                                         "type": "integer"
                                     },
                                     {
-                                        "description": "The UUID of the historical data that you want Tenable.io to return. This identifier corresponds to the `history.scan_uuid` attribute of the response message from the [GET /scans/{scan_id}/history](ref:scans-history) endpoint. You can use either this parameter or the `history_id` query parameter to specify a scan run.",
+                                        "description": "The UUID of the historical data that you want TenableVM to return. This identifier corresponds to the `history.scan_uuid` attribute of the response message from the [GET /scans/{scan_id}/history](ref:scans-history) endpoint. You can use either this parameter or the `history_id` query parameter to specify a scan run.",
                                         "format": "uuid",
                                         "in": "query",
                                         "name": "history_uuid",
@@ -3525,11 +3525,11 @@
                                                             "items": {
                                                                 "properties": {
                                                                     "display_name": {
-                                                                        "description": "The name of the user or group granted the specified permissions, as it appears in the Tenable.io user interface.",
+                                                                        "description": "The name of the user or group granted the specified permissions, as it appears in the TenableVM user interface.",
                                                                         "type": "string"
                                                                     },
                                                                     "id": {
-                                                                        "description": "A number representing the order in which the user or user groups display in the Permissions tab in the Tenable.io user interface.",
+                                                                        "description": "A number representing the order in which the user or user groups display in the Permissions tab in the TenableVM user interface.",
                                                                         "type": "integer"
                                                                     },
                                                                     "name": {
@@ -3554,7 +3554,7 @@
                                                             "type": "array"
                                                         },
                                                         "alt_targets_used": {
-                                                            "description": "If `true`, Tenable.io did not not launched with a target list. This parameter is `true` for agent scans.",
+                                                            "description": "If `true`, TenableVM did not not launched with a target list. This parameter is `true` for agent scans.",
                                                             "type": "boolean"
                                                         },
                                                         "control": {
@@ -3605,7 +3605,7 @@
                                                             "type": "string"
                                                         },
                                                         "pci-can-upload": {
-                                                            "description": "If `true`, you can submit the results of the scan for PCI ASV review. For more information, see [PCI ASV](https://docs.tenable.com/tenableio/vulnerabilitymanagement/Content/PCI_ASV/Welcome.htm) in the Tenable.io Vulnerability Management User Guide.",
+                                                            "description": "If `true`, you can submit the results of the scan for PCI ASV review. For more information, see [PCI ASV](https://docs.tenable.com/tenableio/vulnerabilitymanagement/Content/PCI_ASV/Welcome.htm) in the TenableVM Vulnerability Management User Guide.",
                                                             "type": "boolean"
                                                         },
                                                         "policy": {
@@ -3836,7 +3836,7 @@
                                                     "items": {
                                                         "properties": {
                                                             "alt_targets_used": {
-                                                                "description": "If `true`, Tenable.io did not not launched with a target list. This parameter is `true` for agent scans.",
+                                                                "description": "If `true`, TenableVM did not not launched with a target list. This parameter is `true` for agent scans.",
                                                                 "type": "boolean"
                                                             },
                                                             "creation_date": {
@@ -3848,7 +3848,7 @@
                                                                 "type": "integer"
                                                             },
                                                             "is_archived": {
-                                                                "description": "Indicates whether the scan results are older than 35 days (`true`). If this parameter is `true`, Tenable.io returns limited data for the scan run. For complete scan results that are older than 35 days, use the [POST /scans/{scan_id}/export](ref:scans-export-request) endpoint instead.",
+                                                                "description": "Indicates whether the scan results are older than 35 days (`true`). If this parameter is `true`, TenableVM returns limited data for the scan run. For complete scan results that are older than 35 days, use the [POST /scans/{scan_id}/export](ref:scans-export-request) endpoint instead.",
                                                                 "type": "boolean"
                                                             },
                                                             "last_modification_date": {
@@ -3860,7 +3860,7 @@
                                                                 "type": "integer"
                                                             },
                                                             "scheduler": {
-                                                                "description": "If `true`, Tenable.io launched the scan automatically from a schedule.",
+                                                                "description": "If `true`, TenableVM launched the scan automatically from a schedule.",
                                                                 "type": "integer"
                                                             },
                                                             "status": {
@@ -4018,7 +4018,7 @@
                                         }
                                     },
                                     "404": {
-                                        "description": "Returned if Tenable.io cannot find the specified scan.",
+                                        "description": "Returned if TenableVM cannot find the specified scan.",
                                         "schema": {
                                             "description": "Error message",
                                             "properties": {
@@ -4042,7 +4042,7 @@
                                 "tags": [
                                     "Scans"
                                 ],
-                                "description": "Returns scan results for a specific scan. If you submit a request without query parameters, Tenable.io returns results from the latest run of the specified scan. If you submit a request using the query parameters to specify a historical run of the scan, Tenable.io returns the scan results for the specified run.",
+                                "description": "Returns scan results for a specific scan. If you submit a request without query parameters, TenableVM returns results from the latest run of the specified scan. If you submit a request using the query parameters to specify a historical run of the scan, TenableVM returns the scan results for the specified run.",
                                 "operationId": "scans-details",
                                 "summary": "Get scan details"
                             }
@@ -4064,7 +4064,7 @@
                                 ],
                                 "responses": {
                                     "200": {
-                                        "description": "Returned if Tenable.io successfully retrieves the scan status.",
+                                        "description": "Returned if TenableVM successfully retrieves the scan status.",
                                         "schema": {
                                             "properties": {
                                                 "status": {
@@ -4076,7 +4076,7 @@
                                         }
                                     },
                                     "404": {
-                                        "description": "Returned if Tenable.io cannot find the specified scan.",
+                                        "description": "Returned if TenableVM cannot find the specified scan.",
                                         "schema": {
                                             "description": "Error message",
                                             "properties": {
@@ -4092,7 +4092,7 @@
                                         "description": "Returned if you attempt to send too many requests in a specific period of time. For more information, see [Rate Limiting](doc:rate-limiting)."
                                     },
                                     "500": {
-                                        "description": "Returned if Tenable.io encounters an error while attempting to save the scan.",
+                                        "description": "Returned if TenableVM encounters an error while attempting to save the scan.",
                                         "schema": {
                                             "properties": {
                                                 "error": {
@@ -4100,7 +4100,7 @@
                                                     "type": "integer"
                                                 },
                                                 "message": {
-                                                    "description": "A brief message describing the error Tenable.io encountered.",
+                                                    "description": "A brief message describing the error TenableVM encountered.",
                                                     "type": "string"
                                                 },
                                                 "statusCode": {
@@ -4149,7 +4149,7 @@
                                         "schema": {
                                             "properties": {
                                                 "alt_targets": {
-                                                    "description": "If you include this parameter, Tenable.io scans these targets instead of the default. Value can be an array where each index is a target, or an array with a single index of comma-separated targets.",
+                                                    "description": "If you include this parameter, TenableVM scans these targets instead of the default. Value can be an array where each index is a target, or an array with a single index of comma-separated targets.",
                                                     "items": {
                                                         "type": "string"
                                                     },
@@ -4162,7 +4162,7 @@
                                 ],
                                 "responses": {
                                     "200": {
-                                        "description": "Returned if Tenable.io successfully launches the scan.",
+                                        "description": "Returned if TenableVM successfully launches the scan.",
                                         "schema": {
                                             "properties": {
                                                 "scan_uuid": {
@@ -4174,10 +4174,10 @@
                                         }
                                     },
                                     "403": {
-                                        "description": "Returned if Tenable.io cannot launch the scan because the scan is disabled."
+                                        "description": "Returned if TenableVM cannot launch the scan because the scan is disabled."
                                     },
                                     "404": {
-                                        "description": "Returned if Tenable.io cannot find the specified scan.",
+                                        "description": "Returned if TenableVM cannot find the specified scan.",
                                         "schema": {
                                             "description": "Error message",
                                             "properties": {
@@ -4271,7 +4271,7 @@
                                         }
                                     },
                                     "400": {
-                                        "description": "Returned if Tenable.io cannot find the specified assets."
+                                        "description": "Returned if TenableVM cannot find the specified assets."
                                     },
                                     "403": {
                                         "description": "Returned if you do not have permissions to edit tags."
@@ -4311,7 +4311,7 @@
                                 ],
                                 "responses": {
                                     "200": {
-                                        "description": "Returns a list of tags assigned to the specified asset. If no tags are assigned to the asset, Tenable.io returns an empty list. Also, the service does not validate the asset UUID.",
+                                        "description": "Returns a list of tags assigned to the specified asset. If no tags are assigned to the asset, TenableVM returns an empty list. Also, the service does not validate the asset UUID.",
                                         "schema": {
                                             "properties": {
                                                 "tags": {
@@ -4339,7 +4339,7 @@
                                                                 "type": "string"
                                                             },
                                                             "source": {
-                                                                "description": "The tag type:\n - static—A user must manually apply the tag to assets.\n - dynamic—Tenable.io automatically applies the tag based on asset attribute rules.",
+                                                                "description": "The tag type:\n - static—A user must manually apply the tag to assets.\n - dynamic—TenableVM automatically applies the tag based on asset attribute rules.",
                                                                 "type": "string"
                                                             },
                                                             "value": {
@@ -4405,7 +4405,7 @@
                                                             "type": "integer"
                                                         },
                                                         "indexed_at": {
-                                                            "description": "Returns vulnerabilities that were indexed into Tenable.io at the specified date and time (in Unix time).",
+                                                            "description": "Returns vulnerabilities that were indexed into TenableVM at the specified date and time (in Unix time).",
                                                             "format": "int64",
                                                             "type": "integer"
                                                         },
@@ -4461,14 +4461,14 @@
                                                             "type": "array"
                                                         },
                                                         "tag.<category>": {
-                                                            "description": "Returns vulnerabilities on assets with the specified asset tags. The filter is defined as \"tag\", a period (\".\"), and the tag category name. The value of the filter is an array of tag values. For more information about tags, see the <a href=\"https://docs.tenable.com/tenableio/vulnerabilitymanagement/Content/Settings/TagFormatAndApplication.htm\" target=\"_blank\">Tenable.io Vulnerability Management User Guide</a>.",
+                                                            "description": "Returns vulnerabilities on assets with the specified asset tags. The filter is defined as \"tag\", a period (\".\"), and the tag category name. The value of the filter is an array of tag values. For more information about tags, see the <a href=\"https://docs.tenable.com/tenableio/vulnerabilitymanagement/Content/Settings/TagFormatAndApplication.htm\" target=\"_blank\">TenableVM Vulnerability Management User Guide</a>.",
                                                             "items": {
                                                                 "type": "string"
                                                             },
                                                             "type": "array"
                                                         },
                                                         "vpr_score": {
-                                                            "description": "Returns vulnerabilities with the specified Vulnerability Priority Rating (VPR) score or scores. You can combine properties in this object to specify VPR ranges. For example, to export vulnerabilities greater than or equal to 9.0 but lesser than or equal to 9.9, the object would contain a `gte` property of 9.0 and an `lte` property of 9.9. \n\nFor more information about VPR, see <a href=\"https://docs.tenable.com/tenableio/vulnerabilitymanagement/Content/Analysis/RiskMetrics.htm\" target=\"_blank\">Severity vs. VPR</a> in the <i>Tenable.io Vulnerability Management User Guide</i>.",
+                                                            "description": "Returns vulnerabilities with the specified Vulnerability Priority Rating (VPR) score or scores. You can combine properties in this object to specify VPR ranges. For example, to export vulnerabilities greater than or equal to 9.0 but lesser than or equal to 9.9, the object would contain a `gte` property of 9.0 and an `lte` property of 9.9. \n\nFor more information about VPR, see <a href=\"https://docs.tenable.com/tenableio/vulnerabilitymanagement/Content/Analysis/RiskMetrics.htm\" target=\"_blank\">Severity vs. VPR</a> in the <i>TenableVM Vulnerability Management User Guide</i>.",
                                                             "properties": {
                                                                 "eq": {
                                                                     "description": "Returns vulnerabilities with a VPR equal to the specified score or scores. This property cannot be combined with the following range operators: `lt`, `gt`, `lte`, or `gte`.",
@@ -4531,7 +4531,7 @@
                                 ],
                                 "responses": {
                                     "200": {
-                                        "description": "Returned if Tenable.io successfully queues a vulnerability export request.",
+                                        "description": "Returned if TenableVM successfully queues a vulnerability export request.",
                                         "schema": {
                                             "properties": {
                                                 "export_uuid": {
@@ -4651,7 +4651,7 @@
                                                                 "type": "string"
                                                             },
                                                             "tracked": {
-                                                                "description": "A value specifying whether Tenable.io tracks the asset in the asset management system. Tenable.io still assigns untracked assets identifiers in scan results, but these identifiers change with each new scan of the asset. This parameter is relevant to PCI-type scans and in certain cases where there is not enough information in a scan to identify the asset. Untracked assets appear in the scan history, but do not appear in workbenches or reports.",
+                                                                "description": "A value specifying whether TenableVM tracks the asset in the asset management system. TenableVM still assigns untracked assets identifiers in scan results, but these identifiers change with each new scan of the asset. This parameter is relevant to PCI-type scans and in certain cases where there is not enough information in a scan to identify the asset. Untracked assets appear in the scan history, but do not appear in workbenches or reports.",
                                                                 "type": "boolean"
                                                             },
                                                             "uuid": {
@@ -4668,7 +4668,7 @@
                                                     "type": "string"
                                                 },
                                                 "indexed_at": {
-                                                    "description": "The date and time (in Unix time) when the vulnerability was indexed into Tenable.io.",
+                                                    "description": "The date and time (in Unix time) when the vulnerability was indexed into TenableVM.",
                                                     "format": "int64",
                                                     "type": "integer"
                                                 },
@@ -4989,12 +4989,12 @@
                                                                         "type": "object"
                                                                     },
                                                                     "score": {
-                                                                        "description": "The Vulnerability Priority Rating (VPR) for the vulnerability. If a plugin is designed to detect multiple vulnerabilities, the VPR represents the highest value calculated for a vulnerability associated with the plugin. For more information, see <a href=\"https://docs.tenable.com/tenableio/vulnerabilitymanagement/Content/Analysis/RiskMetrics.htm\" target=\"_blank\">Severity vs. VPR</a> in the <i>Tenable.io Vulnerability Management User Guide</i>.",
+                                                                        "description": "The Vulnerability Priority Rating (VPR) for the vulnerability. If a plugin is designed to detect multiple vulnerabilities, the VPR represents the highest value calculated for a vulnerability associated with the plugin. For more information, see <a href=\"https://docs.tenable.com/tenableio/vulnerabilitymanagement/Content/Analysis/RiskMetrics.htm\" target=\"_blank\">Severity vs. VPR</a> in the <i>TenableVM Vulnerability Management User Guide</i>.",
                                                                         "format": "int32",
                                                                         "type": "integer"
                                                                     },
                                                                     "updated": {
-                                                                        "description": "The ISO timestamp when Tenable.io last imported the VPR for this vulnerability. Tenable.io imports a VPR value the first time you scan a vulnerability on your network. Then, Tenable.io automatically re-imports new and updated VPR values daily.",
+                                                                        "description": "The ISO timestamp when TenableVM last imported the VPR for this vulnerability. TenableVM imports a VPR value the first time you scan a vulnerability on your network. Then, TenableVM automatically re-imports new and updated VPR values daily.",
                                                                         "type": "string"
                                                                     }
                                                                 },
@@ -5035,7 +5035,7 @@
                                                     "type": "array"
                                                 },
                                                 "recast_reason": {
-                                                    "description": "The text that appears in the Comment field of the recast rule in the Tenable.io user interface.",
+                                                    "description": "The text that appears in the Comment field of the recast rule in the TenableVM user interface.",
                                                     "type": "string"
                                                 },
                                                 "recast_rule_uuid": {
@@ -5082,11 +5082,11 @@
                                                     "type": "integer"
                                                 },
                                                 "severity_modification_type": {
-                                                    "description": "The type of modification a user made to the vulnerability's severity. Possible values include: \n - none—No modification has been made.\n - recasted—A user in the Tenable.io user interface has recast the risk associated with the vulnerability. \n - accepted—A user in the Tenable.io user interface has accepted the risk associated with the vulnerability. \n\nFor more information about recast and accept rules, see the <i>Tenable.io Vulnerability Management User Guide</i>.",
+                                                    "description": "The type of modification a user made to the vulnerability's severity. Possible values include: \n - none—No modification has been made.\n - recasted—A user in the TenableVM user interface has recast the risk associated with the vulnerability. \n - accepted—A user in the TenableVM user interface has accepted the risk associated with the vulnerability. \n\nFor more information about recast and accept rules, see the <i>TenableVM Vulnerability Management User Guide</i>.",
                                                     "type": "string"
                                                 },
                                                 "state": {
-                                                    "description": "The state of the vulnerability as determined by the Tenable.io state service. Possible values include: \n - open—The vulnerability is currently present on an asset. \n - reopened—The vulnerability was previously marked as fixed on an asset, but has been detected again by a new scan. \n - fixed—The vulnerability was present on an asset, but is no longer detected.",
+                                                    "description": "The state of the vulnerability as determined by the TenableVM state service. Possible values include: \n - open—The vulnerability is currently present on an asset. \n - reopened—The vulnerability was previously marked as fixed on an asset, but has been detected again by a new scan. \n - fixed—The vulnerability was present on an asset, but is no longer detected.",
                                                     "type": "string"
                                                 }
                                             },
@@ -5100,7 +5100,7 @@
                                         "description": "Returned if you do not have permission to export vulnerabilities."
                                     },
                                     "404": {
-                                        "description": "Returned if Tenable.io cannot find the specified chunk with the specified export UUID."
+                                        "description": "Returned if TenableVM cannot find the specified chunk with the specified export UUID."
                                     },
                                     "429": {
                                         "description": "Returned if you attempt to send too many requests in a specific period of time. For more information, see [Rate Limiting](doc:rate-limiting)."
@@ -5158,7 +5158,7 @@
                                                             "type": "integer"
                                                         },
                                                         "chunks_cancelled": {
-                                                            "description": "A list of chunks for which the export process was cancelled. If a chunk fails processing, Tenable.io automatically cancels all subsequent chunks queued for export in the same request. ",
+                                                            "description": "A list of chunks for which the export process was cancelled. If a chunk fails processing, TenableVM automatically cancels all subsequent chunks queued for export in the same request. ",
                                                             "items": {
                                                                 "format": "int32",
                                                                 "type": "integer"
@@ -5195,7 +5195,7 @@
                                                             "type": "integer"
                                                         },
                                                         "status": {
-                                                            "description": "The status of the export request. Possible values include:\n - QUEUED—Tenable.io has queued the export request until it completes other requests currently in process.\n - PROCESSING—Tenable.io has started processing the export request.\n - FINISHED—Tenable.io has completed processing the export request. The list of chunks is complete.\n - CANCELLED—An administrator has cancelled the export request.\n - ERROR—Tenable.io encountered an error while processing the export request. Tenable recommends that you retry the request. If the status persists on retry, contact Support.",
+                                                            "description": "The status of the export request. Possible values include:\n - QUEUED—TenableVM has queued the export request until it completes other requests currently in process.\n - PROCESSING—TenableVM has started processing the export request.\n - FINISHED—TenableVM has completed processing the export request. The list of chunks is complete.\n - CANCELLED—An administrator has cancelled the export request.\n - ERROR—TenableVM encountered an error while processing the export request. Tenable recommends that you retry the request. If the status persists on retry, contact Support.",
                                                             "type": "string"
                                                         },
                                                         "total_chunks": {
@@ -5217,7 +5217,7 @@
                                         "description": "Returned if you do not have permission to view the vulnerability export status."
                                     },
                                     "404": {
-                                        "description": "Returned if Tenable.io cannot find a vulnerability export job with the specified UUID."
+                                        "description": "Returned if TenableVM cannot find a vulnerability export job with the specified UUID."
                                     },
                                     "429": {
                                         "description": "Returned if you attempt to send too many requests in a specific period of time. For more information, see [Rate Limiting](doc:rate-limiting)."
@@ -5495,7 +5495,7 @@
                                                     "items": {
                                                         "properties": {
                                                             "accepted_count": {
-                                                                "description": "The number of times that a user in the user interface created an accept rule for this vulnerability. For more information, see <a href=\"https://docs.tenable.com/tenableio/vulnerabilitymanagement/Content/Settings/AboutRecastRules.htm\" target=\"_blank\">Recast Rules</a> in the <i>Tenable.io Vulnerability Management User Guide</i>.",
+                                                                "description": "The number of times that a user in the user interface created an accept rule for this vulnerability. For more information, see <a href=\"https://docs.tenable.com/tenableio/vulnerabilitymanagement/Content/Settings/AboutRecastRules.htm\" target=\"_blank\">Recast Rules</a> in the <i>TenableVM Vulnerability Management User Guide</i>.",
                                                                 "format": "int32",
                                                                 "type": "integer"
                                                             },
@@ -5534,7 +5534,7 @@
                                                                 "type": "string"
                                                             },
                                                             "recasted_count": {
-                                                                "description": "The number of times that a user in the user interface created a recast rule for this vulnerability. For more information, see <a href=\"https://docs.tenable.com/tenableio/vulnerabilitymanagement/Content/Settings/AboutRecastRules.htm\" target=\"_blank\">Recast Rules</a> in the <i>Tenable.io Vulnerability Management User Guide</i>.",
+                                                                "description": "The number of times that a user in the user interface created a recast rule for this vulnerability. For more information, see <a href=\"https://docs.tenable.com/tenableio/vulnerabilitymanagement/Content/Settings/AboutRecastRules.htm\" target=\"_blank\">Recast Rules</a> in the <i>TenableVM Vulnerability Management User Guide</i>.",
                                                                 "format": "int32",
                                                                 "type": "integer"
                                                             },
@@ -5544,7 +5544,7 @@
                                                                 "type": "integer"
                                                             },
                                                             "vpr_score": {
-                                                                "description": "The Vulnerability Priority Rating (VPR) for the vulnerability. If a plugin is designed to detect multiple vulnerabilities, the VPR represents the highest value calculated for a vulnerability associated with the plugin. For more information, see <a href=\"https://docs.tenable.com/tenableio/vulnerabilitymanagement/Content/Analysis/RiskMetrics.htm\" target=\"_blank\">Severity vs. VPR</a> in the <i>Tenable.io Vulnerability Management User Guide</i>.",
+                                                                "description": "The Vulnerability Priority Rating (VPR) for the vulnerability. If a plugin is designed to detect multiple vulnerabilities, the VPR represents the highest value calculated for a vulnerability associated with the plugin. For more information, see <a href=\"https://docs.tenable.com/tenableio/vulnerabilitymanagement/Content/Analysis/RiskMetrics.htm\" target=\"_blank\">Severity vs. VPR</a> in the <i>TenableVM Vulnerability Management User Guide</i>.",
                                                                 "format": "float",
                                                                 "type": "number"
                                                             },
